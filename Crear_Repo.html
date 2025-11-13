@@ -1,1 +1,197 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
 
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Crear Nuevo Repositorio</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#238636",
+                        "background-dark": "#0d1117",
+                        "card-dark": "#161b22",
+                        "border-dark": "#30363d",
+                        "text-primary-dark": "#c9d1d9",
+                        "text-secondary-dark": "#8b949e",
+                        "accent-blue": "#58a6ff",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                    },
+                },
+            },
+        };
+    </script>
+    <style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark font-display text-text-primary-dark">
+    <div class="flex min-h-screen">
+        <!-- <aside class="w-64 flex-shrink-0 flex-col border-r border-border-dark bg-card-dark p-6 hidden lg:flex">
+            <div class="flex items-center gap-3 pb-8">
+                <h1 class="text-xl font-bold text-text-primary-dark">GitView</h1>
+            </div>
+            <nav class="flex flex-col gap-2">
+                <a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-text-secondary-dark hover:bg-border-dark hover:text-text-primary-dark transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">home</span> Inicio
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-text-secondary-dark hover:bg-border-dark hover:text-text-primary-dark transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">bookmark</span> Guardados
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-text-secondary-dark hover:bg-border-dark hover:text-text-primary-dark transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">person</span> Perfil
+                </a>
+            </nav>
+            <div class="mt-auto">
+                <button
+                    class="w-full flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white hover:bg-[#2ea043] transition-colors">
+                    <span class="material-symbols-outlined">add</span> Nuevo Repo
+                </button>
+            </div>
+        </aside> -->
+        <main class="w-full flex-1 p-4 sm:p-6 lg:p-8">
+            <div class="max-w-4xl mx-auto">
+                <header class="mb-8">
+                    <h1 class="text-3xl font-bold">Crear un Nuevo Repositorio</h1>
+                    <p class="text-text-secondary-dark mt-1">Un repositorio contiene todos los archivos de tu proyecto,
+                        incluyendo el historial de revisiones.</p>
+                </header>
+                <div class="space-y-8">
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary-dark" for="repo-name">Nombre del
+                            Repositorio <span class="text-red-500">*</span></label>
+                        <div class="mt-1 flex items-center">
+                            <span
+                                class="inline-flex items-center rounded-l-md border border-r-0 border-border-dark bg-card-dark px-3 text-text-secondary-dark">Equipo3
+                                /</span>
+                            <input
+                                class="block w-full min-w-0 flex-1 rounded-none rounded-r-md border-border-dark bg-background-dark text-text-primary-dark focus:border-accent-blue focus:ring-accent-blue sm:text-sm"
+                                id="repo-name" name="repo-name" placeholder="mi-increible-proyecto" type="text" />
+                        </div>
+                    </div>
+                    <div>
+                        <fieldset>
+                            <legend class="text-sm font-medium text-text-primary-dark">Visibilidad <span
+                                    class="text-red-500">*</span></legend>
+                            <div class="mt-2 space-y-4">
+                                <div
+                                    class="flex items-start rounded-md border border-border-dark p-4 hover:border-accent-blue cursor-pointer">
+                                    <input checked=""
+                                        class="h-4 w-4 border-border-dark bg-background-dark text-accent-blue focus:ring-accent-blue"
+                                        id="public" name="visibility" type="radio" />
+                                    <div class="ml-3 text-sm">
+                                        <label class="font-medium text-text-primary-dark flex items-center gap-2"
+                                            for="public">
+                                            <span class="material-symbols-outlined !text-base">public</span> Público
+                                        </label>
+                                        <p class="text-text-secondary-dark">Cualquiera en internet puede ver este
+                                            repositorio. Tú eliges quién puede hacer commits.</p>
+                                    </div>
+                                </div>
+                                <div
+                                    class="flex items-start rounded-md border border-border-dark p-4 hover:border-accent-blue cursor-pointer">
+                                    <input
+                                        class="h-4 w-4 border-border-dark bg-background-dark text-accent-blue focus:ring-accent-blue"
+                                        id="private" name="visibility" type="radio" />
+                                    <div class="ml-3 text-sm">
+                                        <label class="font-medium text-text-primary-dark flex items-center gap-2"
+                                            for="private">
+                                            <span class="material-symbols-outlined !text-base">lock</span> Privado
+                                        </label>
+                                        <p class="text-text-secondary-dark">Tú eliges quién puede ver y hacer commits en
+                                            este repositorio.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </fieldset>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary-dark" for="collaborators">Agregar
+                            Colaboradores</label>
+                        <div class="mt-1 relative">
+                            <span
+                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary-dark">group_add</span>
+                            <input
+                                class="block w-full rounded-md border-border-dark bg-background-dark py-2 pl-10 pr-4 text-text-primary-dark focus:border-accent-blue focus:ring-accent-blue sm:text-sm"
+                                id="collaborators" name="collaborators" placeholder="Buscar por nombre de usuario..."
+                                type="text" />
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex items-start rounded-md border border-border-dark p-4">
+                            <span class="material-symbols-outlined !text-base text-accent-blue -mt-0.5">check_box</span>
+                            <div class="ml-3 text-sm -mt-1">
+                                <p class="font-medium text-text-primary-dark">Crear archivo README <span
+                                        class="text-red-500">*</span></p>
+                                <p class="text-text-secondary-dark">Este es el archivo donde puedes describir tu
+                                    proyecto.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary-dark">Seleccionar Portada del
+                            Repositorio</label>
+                        <div
+                            class="mt-1 flex justify-center rounded-md border-2 border-dashed border-border-dark px-6 pt-5 pb-6">
+                            <div class="space-y-1 text-center">
+                                <span
+                                    class="material-symbols-outlined !text-5xl text-text-secondary-dark">upload_file</span>
+                                <div class="flex text-sm text-text-secondary-dark">
+                                    <label
+                                        class="relative cursor-pointer rounded-md font-medium text-accent-blue focus-within:outline-none focus-within:ring-2 focus-within:ring-accent-blue focus-within:ring-offset-2 focus-within:ring-offset-background-dark hover:text-blue-400"
+                                        for="file-upload">
+                                        <span>Sube un archivo</span>
+                                        <input class="sr-only" id="file-upload" name="file-upload" type="file" />
+                                    </label>
+                                    <p class="pl-1">o arrástralo y suéltalo</p>
+                                </div>
+                                <p class="text-xs text-text-secondary-dark">Imágenes o videos hasta 10MB</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium text-text-primary-dark" for="hashtags">Seleccionar
+                            Hashtag</label>
+                        <input
+                            class="mt-1 block w-full rounded-md border-border-dark bg-background-dark text-text-primary-dark focus:border-accent-blue focus:ring-accent-blue sm:text-sm"
+                            id="hashtags" name="hashtags" placeholder="Ej: #desarrolloweb #react #javascript"
+                            type="text" />
+                    </div>
+                    <div class="border-t border-border-dark pt-6 flex justify-end">
+                        <!-- Botón de atrás -->
+                        <button
+                            onclick="window.location.href='Inicio.html'"
+                            class="inline-flex justify-center rounded-md border border-transparent bg-red-600 py-2 px-6 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-background-dark"
+                            type="button">
+                            Atrás
+                        </button>
+
+                        <!-- Botón Crear Repositorio (Verde) -->
+                        <button
+                            class="inline-flex justify-center rounded-md border border-transparent bg-green-600 py-2 px-6 text-sm font-medium text-white shadow-sm hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 focus:ring-offset-background-dark"
+                            type="submit">
+                            Crear Repositorio
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

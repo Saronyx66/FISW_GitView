@@ -1,12 +1,14 @@
 <!DOCTYPE html>
-<html class="dark" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Feed de Repositorios</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script id="tailwind-config">
+<html class="dark" lang="es">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Feed de Repositorios</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script id="tailwind-config">
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -27,168 +29,206 @@
             },
         }
     </script>
-<style type="text/tailwindcss">
+    <style type="text/tailwindcss">
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
             font-size: 20px;
         }
     </style>
 </head>
+
 <body class="bg-background-dark font-display text-text-primary-dark">
-<div class="flex min-h-screen">
-<aside class="w-64 flex-shrink-0 flex-col border-r border-border-dark bg-card-dark p-6 hidden lg:flex">
-<div class="flex items-center gap-3 pb-8">
-<h1 class="text-xl font-bold text-text-primary-dark">GitView</h1>
-</div>
-<nav class="flex flex-col gap-2">
-<a class="flex items-center gap-3 rounded-lg bg-border-dark px-4 py-2.5 text-sm font-semibold" href="#">
-<span class="material-symbols-outlined">home</span>
-                Inicio
-            </a>
-<a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-text-secondary-dark hover:bg-border-dark hover:text-text-primary-dark transition-colors" href="#">
-<span class="material-symbols-outlined">bookmark</span>
-                Guardados
-            </a>
-<a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-text-secondary-dark hover:bg-border-dark hover:text-text-primary-dark transition-colors" href="#">
-<span class="material-symbols-outlined">person</span>
-                Perfil
-            </a>
-</nav>
-<div class="mt-auto">
-<button class="w-full flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white hover:bg-[#2ea043] transition-colors">
-<span class="material-symbols-outlined">add</span>
-                Nuevo Repo
-            </button>
-</div>
-</aside>
-<main class="w-full flex-1 p-4 sm:p-6 lg:p-8">
-<header class="mb-8 flex items-center justify-between">
-<h1 class="text-3xl font-bold">Feed</h1>
-<div class="flex items-center gap-4">
-<div class="relative hidden sm:block">
-<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary-dark">search</span>
-<input class="w-64 rounded-lg border border-border-dark bg-card-dark py-2 pl-10 pr-4 text-sm focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue" placeholder="Buscar repositorios..." type="text"/>
-</div>
-<button class="relative rounded-full p-2 hover:bg-card-dark">
-<span class="material-symbols-outlined">notifications</span>
-</button>
-<img alt="Avatar del usuario" class="h-9 w-9 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeh8lu-7ilm7Ql9hWZ5bOiDWWlf4-uu2TJvO04U8agFosvZ5Tk064tVF170eHXleQLCIM-BqOCIyjxM6XycaWaLGmrunqAFtDOnOtR9YQiqtrvd7Mt7kA_RPS7JPAnDsAgVaHMeLo0eCJTj1u0KNQeoViSGxyZV-wIUeWwHM_Vj0hM3V5sJlgjUXIrfRgitzIZjXDLM778QYhxRy18-dZ31cWy5ZTbS0egcxnkP7DJiZrC3tORY-0gdGY9F3-zP_ZzYTa60jk9bh06"/>
-</div>
-</header>
-<div class="columns-1 gap-6 sm:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5">
-<div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
-<a href="#">
-<img alt="Vista previa del repositorio 'AwesomeProject'" class="w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjaEHz4FoBA1z5q9Or9OBNxEqvJv09LO8ubAPpdl6OWClxKKINMMzAikU1SyBtk5Zoms1HwvNiy9RPFYLmmEfhfCsH8hnTbjN5D83XfsuGqJcmEtIzRo1-PLtvBLVcaN6cTL8GWiSJaTgemfCh-hGHcaWZ1znrT1ZcEChzX7uVg2V7ydlOvNSF1ZWgNKROl2vllQy6sI-KTEmFf9tj2wnHR5TMETZUvMTWMpY9bSDrBhg1xzAjFOaa2wzIprF47CQ-cVL7VaWHm8fC"/>
-</a>
-<div class="p-4">
-<div class="flex items-center gap-3">
-<img alt="Avatar de elenacoder" class="h-8 w-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwiRyJiC97kXhOsEPdq8-zpmgut8dBfHBoVM9vXTj44PfYRsEvO_LP_-wq5Fbrx9FvEIJn6QpJlSHe5mSTgw48Nh0GIF2i0-PosZOktzK-CNonH2kOZcb4XGqgYxlIwPG1tSSeR-WIB5CvN3AzFBoJaq9rIaNSmbZBehamMyExKHeA_mvSoyLdtAuwbf1zrBg1eX5rJ_tYpfUWhi35Zk_RZ-28pCqbtXB5AZnljnSUJymh59eMvuaP4GO38sw3QICKBfOgkJ4k7CNA"/>
-<div>
-<h3 class="font-semibold text-text-primary-dark">AwesomeProject</h3>
-<p class="text-sm text-text-secondary-dark">elenacoder</p>
-</div>
-</div>
-</div>
-</div>
-<div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
-<a href="#">
-<img alt="Vista previa del repositorio 'NextGenUI'" class="w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAMUcpsNX2LHTejgWg-CxcYbUQcb3EOQbpZ556tvoDX2MqeEJ8hIbaWPsbvP-l74AZrlPvXOYbpKUV8-7h58WzjUuZqRu5efmJTr5LY_iQAomZmjNcXyFHcgkNt0X89-AjPRe5TBDlTk_A2VMLVAqO0v9C0xSJp1w_gofHovZqYUe7u8JUT0uoOXyKg-Vk0E2SMKvErBkqVTVywCqUXs30hqtgU-aXmYt_eP46QTN6bNPzYafP9TW3qUnR1BD30nFJtJWtTwK1-OFX"/>
-</a>
-<div class="p-4">
-<div class="flex items-center gap-3">
-<img alt="Avatar de techguru" class="h-8 w-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0t5HV4bxx3xEYdYq28Ky6CAsMspf8q5f5l_NoN3tzpVDJcVLxHkIR42XCBvfA6_e86Z5lzY0Y1tECYO2F_gnQx8a9TukuPFxgLk9XpOksrmRn7jJ09hzR3g21mhB1cXe-g4sjhfpNxe4WLrrSaJBoHn71QJlPKCXESvLDY__QxZlHrhRXO9IfvQhJ5G1QPP8_9zK_z-EK2AMG5IT68CNX3ENOxEiY1YmLWGkDml_phBHEkCTXaSvabKQ2L5BHgngfdQaFDUNvkonh"/>
-<div>
-<h3 class="font-semibold text-text-primary-dark">NextGenUI</h3>
-<p class="text-sm text-text-secondary-dark">techguru</p>
-</div>
-</div>
-</div>
-</div>
-<div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
-<a href="#">
-<img alt="Vista previa del repositorio 'DataVisualizer'" class="w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuACdrS0UOOw4iTkTr65qw_xgGl3zWMEuACC6NlZbLB1YCN81dN6eYr1ySx9GyWvHq1HTqHr1YLGdEie7qhN-1wzfQrQxd5O_FIkrm2Ka5INhXd0UPSBy77SAkuC2kZd6DMcvwWdzJNOa17MNWs8wSW1mr2v95paou18nfQOFzLyIZ1QDdYR79cWrZ46bNMcioOuY-UQP4kaJylrrd1mVVQDUhCiyPgQVTospiwmX-e_yt5VhK9RivETq_fg9vedewXxEqXPQc69EBpM"/>
-</a>
-<div class="p-4">
-<div class="flex items-center gap-3">
-<img alt="Avatar de datavizfan" class="h-8 w-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIvIH86fSHOafi4ioHqGxJ-eU4VfxWq_kjMJzb52Kkh5BGDRBsPVgJU1W1SU376XhW7JAN0UCH37YzjbufBsKGlDMEt1duZdQz41_k0AfeUASlTTfTJ6S6jnkj_mSQxDPKa1mLxXlmzvyRC5k32h2Iebtv1Av0sOPU919e-PG9yVkJRZrd6nw2my4M4nkFCwJIQl1RTkMrJ2Dniz6nw19zmB8dS58cEbJFZcds7O5dxoL9fW4BWKCrMoTmZZmOgu7VFVvciEzNsNwJ"/>
-<div>
-<h3 class="font-semibold text-text-primary-dark">DataVisualizer</h3>
-<p class="text-sm text-text-secondary-dark">datavizfan</p>
-</div>
-</div>
-</div>
-</div>
-<div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
-<a href="#">
-<img alt="Vista previa del repositorio 'ReactBoilerplate'" class="w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuARS7D8TLlhjLLVN67Ho1DA-FF0eWTfFt_v0gr3Wh5pLsT_xryZGEC6hI1mhDuYwz1h7siK2IrmGX49TL_d6vg1ntDiKnzRecjpQS_fuN7kOUsQLLHfNLM_6Yz9bMswga1dCUU-NJmCBudNP31R7XHUyDon0-dKEDwP2LXnhzU-4cqIH9T2LpnUKrdLurLlDENw61XLbwA06R7d7qD32LFjHL8-wZxFS0-rbDQtE6t2DUXCEqEW-uMsCM2vjqMBN324ZMhkNndsCkS7"/>
-</a>
-<div class="p-4">
-<div class="flex items-center gap-3">
-<img alt="Avatar de devmaster" class="h-8 w-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA85DIDIiAWZ9DHejY-ZzlNtiItkOlrA6Tu_iQATFVbPU4lvaNL2SOj1sdVXhr6KfAt4k_Gll7W0z0dkfLRaHTa-TLgQa4wWq-Zr2XrlEdwwZvw47L1_1Ihzf2dB3gnEHdrX8wirzU8_tqOJWmdAa3aDC_IJPZjXJn3-MXY60Br1NGisnPvwA9E0C629GyKSfqpY5BUr1_7doLavmugvanEATIbAwdIsfDiPxzWN7zHgkvPJu2NbflEZ5EAwPRfhjfjKEe7VlCFv-eJ"/>
-<div>
-<h3 class="font-semibold text-text-primary-dark">ReactBoilerplate</h3>
-<p class="text-sm text-text-secondary-dark">devmaster</p>
-</div>
-</div>
-</div>
-</div>
-<div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
-<a href="#">
-<img alt="Vista previa del repositorio 'CodeSnippets'" class="w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMugCRR8HFbmj2a-RoLL4fjj56jlTt1Epnim-kcqqKXoS-4zX562sQusrAQVIQ8AjCVIDlQUxPmY-9Ovfbl2PJ8byP77qc0tLVnsIB51ynpUbte8xLhDmyAHhyvRQl2_PIvzhIP6poayBvMV6Z39st2xF2NtRsLdDFkB8Kk6Osy48xAo9GCnByVoK1FJ4Cw-DUwkh17eeYTx68CaqB85cJ9J_0MDAVL0GheJKs_G5yKkdOe2dR_gYdNM_bIXRYZg2vYtaDBfOMM0VX"/>
-</a>
-<div class="p-4">
-<div class="flex items-center gap-3">
-<img alt="Avatar de snippetking" class="h-8 w-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrWXrVKM0gO9_O8G6HLqnyYtob1wKlfr6-7pPe-qOmyZmk7Qirn264lEdGZZ_Sj9ZskufZWu2fISx131NWMVlhlvd3YEL8z1UWS94CrpwU8oTwNR7_wAN6TLomG_v3O3zkdMEaPdvyo890-vnn37QtV9GC3hoowZfL_F-HOf54uz0QHbx-_D5TgK34BFc_ceLGzUUaw9xOu-jpQqrfDs0_pei8JbVaLyLUxIoC_pkNPh7fKAor5YqGp7AO8n5netbcgeYu1UP-e2_W"/>
-<div>
-<h3 class="font-semibold text-text-primary-dark">CodeSnippets</h3>
-<p class="text-sm text-text-secondary-dark">snippetking</p>
-</div>
-</div>
-</div>
-</div>
-<div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
-<a href="#">
-<img alt="Vista previa del repositorio 'GameEngine'" class="w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZUPzcB351euydMzGHXy0x0e_L-1hXg_AR2ZY9aDau7124n8xuQqJVGkAg5XyLNhrcEzyMEzZRcEIls1wbGJ9SsZUxlETBtJDWkTtc1h8J6EVh2Tz1CwgDneKB5-eMC6NF-YXZ0b_oGWiWQGTCOPQYvgO7jE67L9kdEXjYYjB2GUvgyuFaEOCgwCFIlrKn4fFmPMgKmMproWB6SoAuUUJgEh2BphfrWMD4zsN3IelSha9lZ5Rmdhq-9JTMsk_rc9_-Kh60Z18yTJkJ"/>
-</a>
-<div class="p-4">
-<div class="flex items-center gap-3">
-<img alt="Avatar de gamedev" class="h-8 w-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4HUa3gmnk07dvWtPG6Pr9ecX9EUIeKesQwTxCrfE1OzzkhmxMsr5tp58uClfLEC-GM9XOH2OTQ3HVofv1gzE9h9UEa6iaWPVv0xlgy5hhgkzdenjJfkcikyOGid-6U-zUenE7R8UMivde2rN48AtAqJ5URYnCfuhEMCB_ZnBRQ-RIlkApyu0cncpqcabYA_iQhRxLeBts9xfndyhg7SzZBid7uriU5Ez2pgZENSQBQFrrDD72_aOI4N7ehgRORbQWhMyfPWfilSxq"/>
-<div>
-<h3 class="font-semibold text-text-primary-dark">GameEngine</h3>
-<p class="text-sm text-text-secondary-dark">gamedev</p>
-</div>
-</div>
-</div>
-</div>
-<div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
-<a href="#">
-<img alt="Vista previa del repositorio 'API-Gateway'" class="w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPQNrI29ZiPOc7RPAmrHscmrd5SfMZG5ysKtfPgvcbwI_5KAZVOfopUje8No5EtPZ7Umg0y_dgq5EMb6BCz9lQx35ZOIp_v7Jj3CFPzJ7S3gLwHfUquio8jCqa_Y-H9Zgt30Lhbzcg2yBYAF8Muru-XKwPwVL3b8EOMFSMVkbMpVtiC7u8E1oBDZq2MS32Rq9BZBM8zzqmLaOvA9Gr7bDw82YEA101Jf2--MPQcZH4I8VYDEOw810XeGXFPYe3fyI_DqfjIS8RQJqC"/>
-</a>
-<div class="p-4">
-<div class="flex items-center gap-3">
-<img alt="Avatar de backendpro" class="h-8 w-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl_aysh-x4axcQUbNZ_QqOie77Ld6PBVaRNcLXetAxvcoJ9A-j6HA4T9VTccpXubJ932ltCraTbcj8anWXlgFkCgj0Zp-tkkIvLjKfWeC-LTvO3l3veNXcwHljwAfRwOEW_J5VtMM3IbVUkIOKWevNJIOrrDLCY_GGZDn4v8N3TdKVp8GgnfMoCYrzjlatbuIPpR0bbjg9JhzRrchA5NKQlllUjHuLk3eEtXtMYkDK8_EO_N2SCYEeO-Ge9Tp3tp1FmIqU7dlB27M8"/>
-<div>
-<h3 class="font-semibold text-text-primary-dark">API-Gateway</h3>
-<p class="text-sm text-text-secondary-dark">backendpro</p>
-</div>
-</div>
-</div>
-</div>
-<div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
-<a href="#">
-<img alt="Vista previa del repositorio 'MyPortfolio'" class="w-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaUvpWUQWR_TpXLD-0xqLzFiz_P9TI_3EBboMFJY4VvY7IVW994mVX198VlcuG_isGitdujAE9uODUd3oatf2k9R-ZMAYlHbUFkPQrwSNsobRLLdjcXunP5oKuzG_7GvwvRL2S1gsuoY5IE_qg9znSVq9t_7S1SL79JV-W0Wjtr9hC5UHrXqr47cnbdsHOM7gB4Ib8xxiZIJkTGEpGZQtuxHAqZqvzXgAEGFC7BuqvFLmjqeUfDKynvVtvlRAVnD-vZGamZjWPVhab"/>
-</a>
-<div class="p-4">
-<div class="flex items-center gap-3">
-<img alt="Avatar de elenacoder" class="h-8 w-8 rounded-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeCljXV8YqttdsyDo7GWq1fN8lKf7TKuQGDPvl-FdfHjhDS6KkcIpE1IqpwI1oP02nEJbSaCQ04D-8B4SsXo2P5TEifXHhnpJ5HFMh6gGCIjpfE51_d9_wkYzKObnFXQ9zPEakdQRv8GYzGSKSOngdsoJVdiSuIkD8orsbKeBgoHS7uZlReqolGy91VC3XoGkQHnz2dh88UP1E1lwMrJ8YBpH07zCmmoteWwNjvJ2BQwNv1qidJVymepeJqRe9IXSwCRcCMmbBlyiG"/>
-<div>
-<h3 class="font-semibold text-text-primary-dark">MyPortfolio</h3>
-<p class="text-sm text-text-secondary-dark">elenacoder</p>
-</div>
-</div>
-</div>
-</div>
-</div>
-</main>
-</div>
-</body></html>
+    <div class="flex min-h-screen">
+        <aside class="w-64 flex-shrink-0 flex-col border-r border-border-dark bg-card-dark p-6 hidden lg:flex">
+            <div class="flex items-center gap-3 pb-8">
+                <h1 class="text-xl font-bold text-text-primary-dark">GitView</h1>
+            </div>
+            <nav class="flex flex-col gap-2">
+                <a class="flex items-center gap-3 rounded-lg bg-border-dark px-4 py-2.5 text-sm font-semibold" href="#">
+                    <span class="material-symbols-outlined">home</span>
+                    Inicio
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-text-secondary-dark hover:bg-border-dark hover:text-text-primary-dark transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">bookmark</span>
+                    Guardados
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-text-secondary-dark hover:bg-border-dark hover:text-text-primary-dark transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">person</span>
+                    Perfil
+                </a>
+
+                <div class="mt-8">
+                    <h2 class="px-4 text-xs font-semibold text-text-secondary-dark uppercase tracking-wider mb-3">
+                        Repositorios recientes</h2>
+                    <nav class="flex flex-col gap-1">
+                        <a class="flex items-center gap-3 rounded-lg px-4 py-2 text-sm text-text-secondary-dark hover:bg-border-dark hover:text-text-primary-dark transition-colors"
+                            href="#">
+                            <span class="material-symbols-outlined text-sm">archive</span>
+                            <span>Equipo2/GitView</span>
+                        </a>
+                    </nav>
+                </div>
+            </nav>
+            <div class="mt-auto">
+                <button onclick="window.location.href='Crear_Repo.html'"
+                    class="w-full flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white hover:bg-[#2ea043] transition-colors">
+                    <span class="material-symbols-outlined">add</span>
+                    Nuevo Repo
+                </button>
+            </div>
+        </aside>
+        <main class="w-full flex-1 p-4 sm:p-6 lg:p-8">
+            <header class="mb-8 flex items-center justify-between">
+                <h1 class="text-3xl font-bold">Feed</h1>
+                <div class="flex items-center gap-4">
+                    <div class="relative hidden sm:block">
+                        <span
+                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary-dark">search</span>
+                        <input
+                            class="w-64 rounded-lg border border-border-dark bg-card-dark py-2 pl-10 pr-4 text-sm focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue"
+                            placeholder="Buscar repositorios..." type="text" />
+                    </div>
+                    <button class="relative rounded-full p-2 hover:bg-card-dark">
+                        <span class="material-symbols-outlined">notifications</span>
+                    </button>
+                    <img alt="Avatar del usuario" class="h-9 w-9 rounded-full"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeh8lu-7ilm7Ql9hWZ5bOiDWWlf4-uu2TJvO04U8agFosvZ5Tk064tVF170eHXleQLCIM-BqOCIyjxM6XycaWaLGmrunqAFtDOnOtR9YQiqtrvd7Mt7kA_RPS7JPAnDsAgVaHMeLo0eCJTj1u0KNQeoViSGxyZV-wIUeWwHM_Vj0hM3V5sJlgjUXIrfRgitzIZjXDLM778QYhxRy18-dZ31cWy5ZTbS0egcxnkP7DJiZrC3tORY-0gdGY9F3-zP_ZzYTa60jk9bh06" />
+                </div>
+            </header>
+            <div class="columns-1 gap-6 sm:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5">
+                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
+                    <a href="#">
+                        <img alt="Vista previa del repositorio 'AwesomeProject'" class="w-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjaEHz4FoBA1z5q9Or9OBNxEqvJv09LO8ubAPpdl6OWClxKKINMMzAikU1SyBtk5Zoms1HwvNiy9RPFYLmmEfhfCsH8hnTbjN5D83XfsuGqJcmEtIzRo1-PLtvBLVcaN6cTL8GWiSJaTgemfCh-hGHcaWZ1znrT1ZcEChzX7uVg2V7ydlOvNSF1ZWgNKROl2vllQy6sI-KTEmFf9tj2wnHR5TMETZUvMTWMpY9bSDrBhg1xzAjFOaa2wzIprF47CQ-cVL7VaWHm8fC" />
+                    </a>
+                    <div class="p-4">
+                        <div class="flex items-center gap-3">
+                            <img alt="Avatar de elenacoder" class="h-8 w-8 rounded-full"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwiRyJiC97kXhOsEPdq8-zpmgut8dBfHBoVM9vXTj44PfYRsEvO_LP_-wq5Fbrx9FvEIJn6QpJlSHe5mSTgw48Nh0GIF2i0-PosZOktzK-CNonH2kOZcb4XGqgYxlIwPG1tSSeR-WIB5CvN3AzFBoJaq9rIaNSmbZBehamMyExKHeA_mvSoyLdtAuwbf1zrBg1eX5rJ_tYpfUWhi35Zk_RZ-28pCqbtXB5AZnljnSUJymh59eMvuaP4GO38sw3QICKBfOgkJ4k7CNA" />
+                            <div>
+                                <h3 class="font-semibold text-text-primary-dark">AwesomeProject</h3>
+                                <p class="text-sm text-text-secondary-dark">elenacoder</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
+                    <a href="#">
+                        <img alt="Vista previa del repositorio 'NextGenUI'" class="w-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAMUcpsNX2LHTejgWg-CxcYbUQcb3EOQbpZ556tvoDX2MqeEJ8hIbaWPsbvP-l74AZrlPvXOYbpKUV8-7h58WzjUuZqRu5efmJTr5LY_iQAomZmjNcXyFHcgkNt0X89-AjPRe5TBDlTk_A2VMLVAqO0v9C0xSJp1w_gofHovZqYUe7u8JUT0uoOXyKg-Vk0E2SMKvErBkqVTVywCqUXs30hqtgU-aXmYt_eP46QTN6bNPzYafP9TW3qUnR1BD30nFJtJWtTwK1-OFX" />
+                    </a>
+                    <div class="p-4">
+                        <div class="flex items-center gap-3">
+                            <img alt="Avatar de techguru" class="h-8 w-8 rounded-full"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0t5HV4bxx3xEYdYq28Ky6CAsMspf8q5f5l_NoN3tzpVDJcVLxHkIR42XCBvfA6_e86Z5lzY0Y1tECYO2F_gnQx8a9TukuPFxgLk9XpOksrmRn7jJ09hzR3g21mhB1cXe-g4sjhfpNxe4WLrrSaJBoHn71QJlPKCXESvLDY__QxZlHrhRXO9IfvQhJ5G1QPP8_9zK_z-EK2AMG5IT68CNX3ENOxEiY1YmLWGkDml_phBHEkCTXaSvabKQ2L5BHgngfdQaFDUNvkonh" />
+                            <div>
+                                <h3 class="font-semibold text-text-primary-dark">NextGenUI</h3>
+                                <p class="text-sm text-text-secondary-dark">techguru</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
+                    <a href="#">
+                        <img alt="Vista previa del repositorio 'DataVisualizer'" class="w-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuACdrS0UOOw4iTkTr65qw_xgGl3zWMEuACC6NlZbLB1YCN81dN6eYr1ySx9GyWvHq1HTqHr1YLGdEie7qhN-1wzfQrQxd5O_FIkrm2Ka5INhXd0UPSBy77SAkuC2kZd6DMcvwWdzJNOa17MNWs8wSW1mr2v95paou18nfQOFzLyIZ1QDdYR79cWrZ46bNMcioOuY-UQP4kaJylrrd1mVVQDUhCiyPgQVTospiwmX-e_yt5VhK9RivETq_fg9vedewXxEqXPQc69EBpM" />
+                    </a>
+                    <div class="p-4">
+                        <div class="flex items-center gap-3">
+                            <img alt="Avatar de datavizfan" class="h-8 w-8 rounded-full"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBIvIH86fSHOafi4ioHqGxJ-eU4VfxWq_kjMJzb52Kkh5BGDRBsPVgJU1W1SU376XhW7JAN0UCH37YzjbufBsKGlDMEt1duZdQz41_k0AfeUASlTTfTJ6S6jnkj_mSQxDPKa1mLxXlmzvyRC5k32h2Iebtv1Av0sOPU919e-PG9yVkJRZrd6nw2my4M4nkFCwJIQl1RTkMrJ2Dniz6nw19zmB8dS58cEbJFZcds7O5dxoL9fW4BWKCrMoTmZZmOgu7VFVvciEzNsNwJ" />
+                            <div>
+                                <h3 class="font-semibold text-text-primary-dark">DataVisualizer</h3>
+                                <p class="text-sm text-text-secondary-dark">datavizfan</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
+                    <a href="#">
+                        <img alt="Vista previa del repositorio 'ReactBoilerplate'" class="w-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuARS7D8TLlhjLLVN67Ho1DA-FF0eWTfFt_v0gr3Wh5pLsT_xryZGEC6hI1mhDuYwz1h7siK2IrmGX49TL_d6vg1ntDiKnzRecjpQS_fuN7kOUsQLLHfNLM_6Yz9bMswga1dCUU-NJmCBudNP31R7XHUyDon0-dKEDwP2LXnhzU-4cqIH9T2LpnUKrdLurLlDENw61XLbwA06R7d7qD32LFjHL8-wZxFS0-rbDQtE6t2DUXCEqEW-uMsCM2vjqMBN324ZMhkNndsCkS7" />
+                    </a>
+                    <div class="p-4">
+                        <div class="flex items-center gap-3">
+                            <img alt="Avatar de devmaster" class="h-8 w-8 rounded-full"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA85DIDIiAWZ9DHejY-ZzlNtiItkOlrA6Tu_iQATFVbPU4lvaNL2SOj1sdVXhr6KfAt4k_Gll7W0z0dkfLRaHTa-TLgQa4wWq-Zr2XrlEdwwZvw47L1_1Ihzf2dB3gnEHdrX8wirzU8_tqOJWmdAa3aDC_IJPZjXJn3-MXY60Br1NGisnPvwA9E0C629GyKSfqpY5BUr1_7doLavmugvanEATIbAwdIsfDiPxzWN7zHgkvPJu2NbflEZ5EAwPRfhjfjKEe7VlCFv-eJ" />
+                            <div>
+                                <h3 class="font-semibold text-text-primary-dark">ReactBoilerplate</h3>
+                                <p class="text-sm text-text-secondary-dark">devmaster</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
+                    <a href="#">
+                        <img alt="Vista previa del repositorio 'CodeSnippets'" class="w-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMugCRR8HFbmj2a-RoLL4fjj56jlTt1Epnim-kcqqKXoS-4zX562sQusrAQVIQ8AjCVIDlQUxPmY-9Ovfbl2PJ8byP77qc0tLVnsIB51ynpUbte8xLhDmyAHhyvRQl2_PIvzhIP6poayBvMV6Z39st2xF2NtRsLdDFkB8Kk6Osy48xAo9GCnByVoK1FJ4Cw-DUwkh17eeYTx68CaqB85cJ9J_0MDAVL0GheJKs_G5yKkdOe2dR_gYdNM_bIXRYZg2vYtaDBfOMM0VX" />
+                    </a>
+                    <div class="p-4">
+                        <div class="flex items-center gap-3">
+                            <img alt="Avatar de snippetking" class="h-8 w-8 rounded-full"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCrWXrVKM0gO9_O8G6HLqnyYtob1wKlfr6-7pPe-qOmyZmk7Qirn264lEdGZZ_Sj9ZskufZWu2fISx131NWMVlhlvd3YEL8z1UWS94CrpwU8oTwNR7_wAN6TLomG_v3O3zkdMEaPdvyo890-vnn37QtV9GC3hoowZfL_F-HOf54uz0QHbx-_D5TgK34BFc_ceLGzUUaw9xOu-jpQqrfDs0_pei8JbVaLyLUxIoC_pkNPh7fKAor5YqGp7AO8n5netbcgeYu1UP-e2_W" />
+                            <div>
+                                <h3 class="font-semibold text-text-primary-dark">CodeSnippets</h3>
+                                <p class="text-sm text-text-secondary-dark">snippetking</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
+                    <a href="#">
+                        <img alt="Vista previa del repositorio 'GameEngine'" class="w-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZUPzcB351euydMzGHXy0x0e_L-1hXg_AR2ZY9aDau7124n8xuQqJVGkAg5XyLNhrcEzyMEzZRcEIls1wbGJ9SsZUxlETBtJDWkTtc1h8J6EVh2Tz1CwgDneKB5-eMC6NF-YXZ0b_oGWiWQGTCOPQYvgO7jE67L9kdEXjYYjB2GUvgyuFaEOCgwCFIlrKn4fFmPMgKmMproWB6SoAuUUJgEh2BphfrWMD4zsN3IelSha9lZ5Rmdhq-9JTMsk_rc9_-Kh60Z18yTJkJ" />
+                    </a>
+                    <div class="p-4">
+                        <div class="flex items-center gap-3">
+                            <img alt="Avatar de gamedev" class="h-8 w-8 rounded-full"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4HUa3gmnk07dvWtPG6Pr9ecX9EUIeKesQwTxCrfE1OzzkhmxMsr5tp58uClfLEC-GM9XOH2OTQ3HVofv1gzE9h9UEa6iaWPVv0xlgy5hhgkzdenjJfkcikyOGid-6U-zUenE7R8UMivde2rN48AtAqJ5URYnCfuhEMCB_ZnBRQ-RIlkApyu0cncpqcabYA_iQhRxLeBts9xfndyhg7SzZBid7uriU5Ez2pgZENSQBQFrrDD72_aOI4N7ehgRORbQWhMyfPWfilSxq" />
+                            <div>
+                                <h3 class="font-semibold text-text-primary-dark">GameEngine</h3>
+                                <p class="text-sm text-text-secondary-dark">gamedev</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
+                    <a href="#">
+                        <img alt="Vista previa del repositorio 'API-Gateway'" class="w-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPQNrI29ZiPOc7RPAmrHscmrd5SfMZG5ysKtfPgvcbwI_5KAZVOfopUje8No5EtPZ7Umg0y_dgq5EMb6BCz9lQx35ZOIp_v7Jj3CFPzJ7S3gLwHfUquio8jCqa_Y-H9Zgt30Lhbzcg2yBYAF8Muru-XKwPwVL3b8EOMFSMVkbMpVtiC7u8E1oBDZq2MS32Rq9BZBM8zzqmLaOvA9Gr7bDw82YEA101Jf2--MPQcZH4I8VYDEOw810XeGXFPYe3fyI_DqfjIS8RQJqC" />
+                    </a>
+                    <div class="p-4">
+                        <div class="flex items-center gap-3">
+                            <img alt="Avatar de backendpro" class="h-8 w-8 rounded-full"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCl_aysh-x4axcQUbNZ_QqOie77Ld6PBVaRNcLXetAxvcoJ9A-j6HA4T9VTccpXubJ932ltCraTbcj8anWXlgFkCgj0Zp-tkkIvLjKfWeC-LTvO3l3veNXcwHljwAfRwOEW_J5VtMM3IbVUkIOKWevNJIOrrDLCY_GGZDn4v8N3TdKVp8GgnfMoCYrzjlatbuIPpR0bbjg9JhzRrchA5NKQlllUjHuLk3eEtXtMYkDK8_EO_N2SCYEeO-Ge9Tp3tp1FmIqU7dlB27M8" />
+                            <div>
+                                <h3 class="font-semibold text-text-primary-dark">API-Gateway</h3>
+                                <p class="text-sm text-text-secondary-dark">backendpro</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
+                    <a href="#">
+                        <img alt="Vista previa del repositorio 'MyPortfolio'" class="w-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaUvpWUQWR_TpXLD-0xqLzFiz_P9TI_3EBboMFJY4VvY7IVW994mVX198VlcuG_isGitdujAE9uODUd3oatf2k9R-ZMAYlHbUFkPQrwSNsobRLLdjcXunP5oKuzG_7GvwvRL2S1gsuoY5IE_qg9znSVq9t_7S1SL79JV-W0Wjtr9hC5UHrXqr47cnbdsHOM7gB4Ib8xxiZIJkTGEpGZQtuxHAqZqvzXgAEGFC7BuqvFLmjqeUfDKynvVtvlRAVnD-vZGamZjWPVhab" />
+                    </a>
+                    <div class="p-4">
+                        <div class="flex items-center gap-3">
+                            <img alt="Avatar de elenacoder" class="h-8 w-8 rounded-full"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuAeCljXV8YqttdsyDo7GWq1fN8lKf7TKuQGDPvl-FdfHjhDS6KkcIpE1IqpwI1oP02nEJbSaCQ04D-8B4SsXo2P5TEifXHhnpJ5HFMh6gGCIjpfE51_d9_wkYzKObnFXQ9zPEakdQRv8GYzGSKSOngdsoJVdiSuIkD8orsbKeBgoHS7uZlReqolGy91VC3XoGkQHnz2dh88UP1E1lwMrJ8YBpH07zCmmoteWwNjvJ2BQwNv1qidJVymepeJqRe9IXSwCRcCMmbBlyiG" />
+                            <div>
+                                <h3 class="font-semibold text-text-primary-dark">MyPortfolio</h3>
+                                <p class="text-sm text-text-secondary-dark">Equipo3</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>
