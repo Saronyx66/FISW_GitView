@@ -1,32 +1,34 @@
 <!DOCTYPE html>
 
-<html class="dark" lang="es"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Inicio de Sesión</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            colors: {
-              "primary": "#238636",
-              "background-light": "#f6f8f6",
-              "background-dark": "#0d1117",
-            },
-            fontFamily: {
-              "display": ["Inter", "sans-serif"]
-            },
-            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+<html class="dark" lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+  <title>Inicio de Sesión</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+  <script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#238636",
+            "background-light": "#f6f8f6",
+            "background-dark": "#0d1117",
           },
+          fontFamily: {
+            "display": ["Inter", "sans-serif"]
+          },
+          borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
         },
-      }
-    </script>
-<style type="text/tailwindcss">
-        .form-input:focus {
+      },
+    }
+  </script>
+  <style type="text/tailwindcss">
+    .form-input:focus {
             border-color: #58a6ff;
             box-shadow: 0 0 0 3px rgba(88, 166, 255, 0.3);
         }
@@ -39,54 +41,68 @@
         }
     </style>
 </head>
+
 <body class="bg-background-light dark:bg-background-dark font-display">
-<div class="relative flex h-auto min-h-screen w-full flex-col items-center justify-center p-4">
-<div class="flex w-full max-w-sm flex-col items-center gap-6">
-<!-- Logo -->
-<div class="flex flex-col items-center justify-center gap-2">
-<div class="w-full gap-1 overflow-hidden bg-transparent @[480px]:gap-2 aspect-square rounded-lg flex max-w-[48px]">
-<div class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none flex-1" data-alt="Application logo with abstract green and blue shapes forming a hexagon" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBoHgNsIE8o7Klc1oC6ax0hpUd7o3I290FL5X4psDEqxidAuWgvL9EFTVf0VfpDQ4gMu-_aRWk7eQFtgJFkALMZ9Wk2s3JVZx8Zeg1L4oEx71MMetVPADXB1Ap4FQ9V0SHSyqIm5YnWK4ZxYouvBoYbDKXFbxkuhAsLy36fiDFed8VakqQ057ea6E6Otsc9KB5CGYdLBqYUcuHf3-kO7mm-GGqrZAqz9djjhNEDHDC0C1Ouxbq_y6JrGY0_EBj3g4RfY1q9SL54vSdS");'></div>
-</div>
-</div>
-<!-- Form Container -->
-<div class="flex w-full flex-col gap-6 rounded-lg border border-[#30363d] bg-[#161b22] p-6">
-<!-- Headline -->
-<div class="text-center">
-<h1 class="text-[#c9d1d9] tracking-light text-2xl font-semibold leading-tight">Inicia sesión en tu cuenta</h1>
-</div>
-<div class="flex w-full flex-col gap-4">
-<!-- Email Field -->
-<label class="flex flex-col w-full">
-<p class="text-[#c9d1d9] text-sm font-medium leading-normal pb-2">Usuario o Correo Electrónico</p>
-<div class="flex w-full flex-1 items-stretch rounded-lg">
-<span class="material-symbols-outlined text-[#c9d1d9] flex border border-[#30363d] bg-[#0d1117] items-center justify-center px-3 rounded-l-lg border-r-0">person</span>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#c9d1d9] focus:outline-0 border border-[#30363d] bg-[#0d1117] h-11 placeholder:text-[#8b949e] p-2.5 rounded-l-none text-sm font-normal leading-normal" placeholder="tu@email.com" value=""/>
-</div>
-</label>
-<!-- Password Field -->
-<label class="flex flex-col w-full">
-<div class="flex items-baseline justify-between pb-2">
-<p class="text-[#c9d1d9] text-sm font-medium leading-normal">Contraseña</p>
-<a class="text-[#58a6ff] text-xs font-medium hover:underline" href="#">¿Olvidaste tu contraseña?</a>
-</div>
-<div class="flex w-full flex-1 items-stretch rounded-lg">
-<span class="material-symbols-outlined text-[#c9d1d9] flex border border-[#30363d] bg-[#0d1117] items-center justify-center px-3 rounded-l-lg border-r-0">lock</span>
-<input class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#c9d1d9] focus:outline-0 border border-[#30363d] bg-[#0d1117] h-11 placeholder:text-[#8b949e] p-2.5 rounded-l-none text-sm font-normal leading-normal" placeholder="Introduce tu contraseña" type="password" value=""/>
-</div>
-</label>
+  <div class="relative flex h-auto min-h-screen w-full flex-col items-center justify-center p-4">
+    <div class="flex w-full max-w-sm flex-col items-center gap-6">
+      <!-- Logo -->
+      <div class="flex flex-col items-center justify-center gap-2">
+        <div
+          class="w-full gap-1 overflow-hidden bg-transparent @[480px]:gap-2 aspect-square rounded-lg flex max-w-[48px]">
+          <div class="w-full bg-center bg-no-repeat bg-cover aspect-auto rounded-none flex-1"
+            data-alt="Application logo with abstract green and blue shapes forming a hexagon"
+            style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBoHgNsIE8o7Klc1oC6ax0hpUd7o3I290FL5X4psDEqxidAuWgvL9EFTVf0VfpDQ4gMu-_aRWk7eQFtgJFkALMZ9Wk2s3JVZx8Zeg1L4oEx71MMetVPADXB1Ap4FQ9V0SHSyqIm5YnWK4ZxYouvBoYbDKXFbxkuhAsLy36fiDFed8VakqQ057ea6E6Otsc9KB5CGYdLBqYUcuHf3-kO7mm-GGqrZAqz9djjhNEDHDC0C1Ouxbq_y6JrGY0_EBj3g4RfY1q9SL54vSdS");'>
+          </div>
+        </div>
+      </div>
+      <!-- Form Container -->
+      <div class="flex w-full flex-col gap-6 rounded-lg border border-[#30363d] bg-[#161b22] p-6">
+        <!-- Headline -->
+        <div class="text-center">
+          <h1 class="text-[#c9d1d9] tracking-light text-2xl font-semibold leading-tight">Inicia sesión en tu cuenta</h1>
+        </div>
+        <div class="flex w-full flex-col gap-4">
+          <!-- Email Field -->
+          <label class="flex flex-col w-full">
+            <p class="text-[#c9d1d9] text-sm font-medium leading-normal pb-2">Usuario o Correo Electrónico</p>
+            <div class="flex w-full flex-1 items-stretch rounded-lg">
+              <span
+                class="material-symbols-outlined text-[#c9d1d9] flex border border-[#30363d] bg-[#0d1117] items-center justify-center px-3 rounded-l-lg border-r-0">person</span>
+              <input
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#c9d1d9] focus:outline-0 border border-[#30363d] bg-[#0d1117] h-11 placeholder:text-[#8b949e] p-2.5 rounded-l-none text-sm font-normal leading-normal"
+                placeholder="tu@email.com" value="" />
+            </div>
+          </label>
+          <!-- Password Field -->
+          <label class="flex flex-col w-full">
+            <div class="flex items-baseline justify-between pb-2">
+              <p class="text-[#c9d1d9] text-sm font-medium leading-normal">Contraseña</p>
+              <a class="text-[#58a6ff] text-xs font-medium hover:underline" href="#">¿Olvidaste tu contraseña?</a>
+            </div>
+            <div class="flex w-full flex-1 items-stretch rounded-lg">
+              <span
+                class="material-symbols-outlined text-[#c9d1d9] flex border border-[#30363d] bg-[#0d1117] items-center justify-center px-3 rounded-l-lg border-r-0">lock</span>
+              <input
+                class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-lg text-[#c9d1d9] focus:outline-0 border border-[#30363d] bg-[#0d1117] h-11 placeholder:text-[#8b949e] p-2.5 rounded-l-none text-sm font-normal leading-normal"
+                placeholder="Introduce tu contraseña" type="password" value="" />
+            </div>
+          </label>
 
-<!-- Login Button -->
-<button  onclick="window.location.href='Inicio.html'" class="flex items-center justify-center text-white font-medium px-4 py-2.5 rounded-lg bg-primary hover:bg-[#2ea043] focus:outline-none focus:ring-4 focus:ring-[#238636]/50 transition-colors duration-200 w-full text-sm">
-                        Iniciar Sesión
-</button>
+          <!-- Login Button -->
+          <button onclick="window.location.href='Inicio.html'"
+            class="flex items-center justify-center text-white font-medium px-4 py-2.5 rounded-lg bg-primary hover:bg-[#2ea043] focus:outline-none focus:ring-4 focus:ring-[#238636]/50 transition-colors duration-200 w-full text-sm">
+            Iniciar Sesión
+          </button>
 
-</div>
-<!-- Secondary Link -->
-<div class="w-full text-center p-4 border border-[#30363d] rounded-lg">
-<p class="text-sm text-[#c9d1d9]">
-                    ¿Nuevo aquí? <a class="text-[#58a6ff] hover:underline" href="#">Crear una cuenta</a>.
-                </p>
-</div>
-</div>
-</div>
-</body></html>
+        </div>
+        <!-- Secondary Link -->
+        <div class="w-full text-center p-4 border border-[#30363d] rounded-lg">
+          <p class="text-sm text-[#c9d1d9]">
+            ¿Nuevo aquí? <a class="text-[#58a6ff] hover:underline" href="#">Crear una cuenta</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+</body>
+
+</html>
