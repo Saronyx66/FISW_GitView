@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Feed de Repositorios</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
@@ -33,6 +33,15 @@
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
             font-size: 20px;
+        }
+        /* Estilo para simular el click y darle cursor-pointer */
+        .repo-card {
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        .repo-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         }
     </style>
 </head>
@@ -73,28 +82,11 @@
                     <span class="material-symbols-outlined">Inbox</span>
                     Invitaciones
                 </a>
-                <!-- <a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-text-secondary-dark hover:bg-border-dark hover:text-text-primary-dark transition-colors"
-                    href="#">
-                    <span class="material-symbols-outlined">person</span>
-                    
-                </a> -->
                 <a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-text-secondary-dark hover:bg-border-dark hover:text-text-primary-dark transition-colors"
                     href="#">
                     <span class="material-symbols-outlined">Folder</span>
                     Repositorios personales
                 </a>
-
-                <!-- <div class="mt-8">
-                    <h2 class="px-4 text-xs font-semibold text-text-secondary-dark uppercase tracking-wider mb-3">
-                        Repositorios recientes</h2>
-                    <nav class="flex flex-col gap-1">
-                        <a class="flex items-center gap-3 rounded-lg px-4 py-2 text-sm text-text-secondary-dark hover:bg-border-dark hover:text-text-primary-dark transition-colors"
-                            href="#">
-                            <span class="material-symbols-outlined text-sm">archive</span>
-                            <span>Equipo2/GitView</span>
-                        </a>
-                    </nav>
-                </div> -->
             </nav>
             <div class="mt-auto">
                 <button onclick="window.location.href='Crear_Repo.html'"
@@ -107,31 +99,20 @@
         <main class="w-full flex-1 p-4 sm:p-6 lg:p-8">
             <header class="mb-8 flex items-center justify-between">
                 <h1 class="text-3xl font-bold">Feed</h1>
-                <!-- <div class="flex items-center gap-4">
-                    <div class="relative hidden sm:block">
-                        <span
-                            class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary-dark">search</span>
-                        <input
-                            class="w-64 rounded-lg border border-border-dark bg-card-dark py-2 pl-10 pr-4 text-sm focus:border-accent-blue focus:outline-none focus:ring-1 focus:ring-accent-blue"
-                            placeholder="Buscar repositorios..." type="text" />
-                    </div>
-                    <button class="relative rounded-full p-2 hover:bg-card-dark">
-                        <span class="material-symbols-outlined">notifications</span>
-                    </button>
-                    <img alt="Avatar del usuario" class="h-9 w-9 rounded-full"
-                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDeh8lu-7ilm7Ql9hWZ5bOiDWWlf4-uu2TJvO04U8agFosvZ5Tk064tVF170eHXleQLCIM-BqOCIyjxM6XycaWaLGmrunqAFtDOnOtR9YQiqtrvd7Mt7kA_RPS7JPAnDsAgVaHMeLo0eCJTj1u0KNQeoViSGxyZV-wIUeWwHM_Vj0hM3V5sJlgjUXIrfRgitzIZjXDLM778QYhxRy18-dZ31cWy5ZTbS0egcxnkP7DJiZrC3tORY-0gdGY9F3-zP_ZzYTa60jk9bh06" />
-                </div> -->
             </header>
             <div class="columns-1 gap-6 sm:columns-2 lg:columns-3 xl:columns-4 2xl:columns-5">
-                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
-                    <a href="Ver_Repo.html">
+                
+                <!-- 1. REPOSITORIO SIMULADO: ERROR DE CARGA DE INFORMACIÓN (onclick) -->
+                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark repo-card"
+                    onclick="simulateRepoError('AwesomeProject')">
+                    <a href="#"> <!-- href desactivado por el onclick -->
                         <img alt="Vista previa del repositorio 'AwesomeProject'" class="w-full object-cover"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjaEHz4FoBA1z5q9Or9OBNxEqvJv09LO8ubAPpdl6OWClxKKINMMzAikU1SyBtk5Zoms1HwvNiy9RPFYLmmEfhfCsH8hnTbjN5D83XfsuGqJcmEtIzRo1-PLtvBLVcaN6cTL8GWiSJaTgemfCh-hGHcaWZ1znrT1ZcEChzX7uVg2V7ydlOvNSF1ZWgNKROl2vllQy6sI-KTEmFf9tj2wnHR5TMETZUvMTWMpY9bSDrBhg1xzAjFOaa2wzIprF47CQ-cVL7VaWHm8fC" />
                     </a>
                     <div class="p-4">
                         <div class="flex items-center gap-3">
                             <img alt="Avatar de elenacoder" class="h-8 w-8 rounded-full"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwiRyJiC97kXhOsEPdq8-zpmgut8dBfHBoVM9vXTj44PfYRsEvO_LP_-wq5Fbrx9FvEIJn6QpJlSHe5mSTgw48Nh0GIF2i0-PosZOktzK-CNonH2kOZcb4XGqgYxlIwPG1tSSeR-WIB5CvN3AzFBoJaq9rIaNSmbZBehamMyExKHeA_mvSoyLdtAuwbf1zrBg1eX5rJ_tYpfUWhi35Zk_RZ-28pCqbtXB5AZnljnSUJymh59eMvuaP4GO38sw3QICKBfOgkJ4k7CNA" />
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwiRyJiC97kXhOsEPdq8-zpmgut8dBfHBoVM9vXTj44PfYRsEvO_LP_-wq5Fbrx9FvEIJn6QpJlSHe5mSTgw48Nh0GIF2i0-PosZOktzK-CNonH2kOZcb4XGqgYxlIwPG1tSSeR-WIB5CvN3AzBoJaq9rIaNSmbZBehamMyExKHeA_mvSoyLdtAuwbf1zrBg1eX5rJ_tYpfUWhi35Zk_RZ-28pCqbtXB5AZnljnSUJymh59eMvuaP4GO38sw3QICKBfOgkJ4k7CNA" />
                             <div>
                                 <h3 class="font-semibold text-text-primary-dark">AwesomeProject</h3>
                                 <p class="text-sm text-text-secondary-dark">elenacoder</p>
@@ -139,15 +120,18 @@
                         </div>
                     </div>
                 </div>
-                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
-                    <a href="Ver_Repo.html">
+                
+                <!-- 2. REPOSITORIO SIMULADO: ERROR DE REPOSITORIO INEXISTENTE (onclick) -->
+                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark repo-card"
+                    onclick="simulateRepoMissing('NextGenUI')">
+                    <a href="#"> <!-- href desactivado por el onclick -->
                         <img alt="Vista previa del repositorio 'NextGenUI'" class="w-full object-cover"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAAMUcpsNX2LHTejgWg-CxcYbUQcb3EOQbpZ556tvoDX2MqeEJ8hIbaWPsbvP-l74AZrlPvXOYbpKUV8-7h58WzjUuZqRu5efmJTr5LY_iQAomZmjNcXyFHcgkNt0X89-AjPRe5TBDlTk_A2VMLVAqO0v9C0xSJp1w_gofHovZqYUe7u8JUT0uoOXyKg-Vk0E2SMKvErBkqVTVywCqUXs30hqtgU-aXmYt_eP46QTN6bNPzYafP9TW3qUnR1BD30nFJtJWtTwK1-OFX" />
                     </a>
                     <div class="p-4">
                         <div class="flex items-center gap-3">
                             <img alt="Avatar de techguru" class="h-8 w-8 rounded-full"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0t5HV4bxx3xEYdYq28Ky6CAsMspf8q5f5l_NoN3tzpVDJcVLxHkIR42XCBvfA6_e86Z5lzY0Y1tECYO2F_gnQx8a9TukuPFxgLk9XpOksrmRn7jJ09hzR3g21mhB1cXe-g4sjhfpNxe4WLrrSaJBoHn71QJlPKCXESvLDY__QxZlHrhRXO9IfvQhJ5G1QPP8_9zK_z-EK2AMG5IT68CNX3ENOxEiY1YmLWGkDml_phBHEkCTXaSvabKQ2L5BHgngfdQaFDUNvkonh" />
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuA0t5HV4bxx3xEYdYq28Ky6CAsMspf8q5f5l_NoN3tzpVDJcVLxHkIR42XCBvfA6_e86Z5lzY0Y1tECYO2F_gnQx8a9TukuPFxgLk9XpOksrmRn7jJ09hzR3g21mhB1cXe-g4sjhfpNxe4WLrrSaBBoHn71QJlPKCXESvLDY__QxZlHrhRXO9IfvQhJ5G1QPP8_9zK_z-EK2AMG5IT68CNX3ENOxEiY1YmLWGkDml_phBHEkCTXaSvabKQ2L5BHgngfdQaFDUNvkonh" />
                             <div>
                                 <h3 class="font-semibold text-text-primary-dark">NextGenUI</h3>
                                 <p class="text-sm text-text-secondary-dark">techguru</p>
@@ -155,7 +139,9 @@
                         </div>
                     </div>
                 </div>
-                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
+                
+                <!-- Resto de repositorios (simulan una navegación exitosa) -->
+                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark repo-card" onclick="window.location.href='Ver_Repo.html'">
                     <a href="Ver_Repo.html">
                         <img alt="Vista previa del repositorio 'DataVisualizer'" class="w-full object-cover"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuACdrS0UOOw4iTkTr65qw_xgGl3zWMEuACC6NlZbLB1YCN81dN6eYr1ySx9GyWvHq1HTqHr1YLGdEie7qhN-1wzfQrQxd5O_FIkrm2Ka5INhXd0UPSBy77SAkuC2kZd6DMcvwWdzJNOa17MNWs8wSW1mr2v95paou18nfQOFzLyIZ1QDdYR79cWrZ46bNMcioOuY-UQP4kaJylrrd1mVVQDUhCiyPgQVTospiwmX-e_yt5VhK9RivETq_fg9vedewXxEqXPQc69EBpM" />
@@ -171,7 +157,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
+                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark repo-card" onclick="window.location.href='Ver_Repo.html'">
                     <a href="Ver_Repo.html">
                         <img alt="Vista previa del repositorio 'ReactBoilerplate'" class="w-full object-cover"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuARS7D8TLlhjLLVN67Ho1DA-FF0eWTfFt_v0gr3Wh5pLsT_xryZGEC6hI1mhDuYwz1h7siK2IrmGX49TL_d6vg1ntDiKnzRecjpQS_fuN7kOUsQLLHfNLM_6Yz9bMswga1dCUU-NJmCBudNP31R7XHUyDon0-dKEDwP2LXnhzU-4cqIH9T2LpnUKrdLurLlDENw61XLbwA06R7d7qD32LFjHL8-wZxFS0-rbDQtE6t2DUXCEqEW-uMsCM2vjqMBN324ZMhkNndsCkS7" />
@@ -187,7 +173,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
+                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark repo-card" onclick="window.location.href='Ver_Repo.html'">
                     <a href="Ver_Repo.html">
                         <img alt="Vista previa del repositorio 'CodeSnippets'" class="w-full object-cover"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuAMugCRR8HFbmj2a-RoLL4fjj56jlTt1Epnim-kcqqKXoS-4zX562sQusrAQVIQ8AjCVIDlQUxPmY-9Ovfbl2PJ8byP77qc0tLVnsIB51ynpUbte8xLhDmyAHhyvRQl2_PIvzhIP6poayBvMV6Z39st2xF2NtRsLdDFkB8Kk6Osy48xAo9GCnByVoK1FJ4Cw-DUwkh17eeYTx68CaqB85cJ9J_0MDAVL0GheJKs_G5yKkdOe2dR_gYdNM_bIXRYZg2vYtaDBfOMM0VX" />
@@ -203,7 +189,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
+                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark repo-card" onclick="window.location.href='Ver_Repo.html'">
                     <a href="Ver_Repo.html">
                         <img alt="Vista previa del repositorio 'GameEngine'" class="w-full object-cover"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDZUPzcB351euydMzGHXy0x0e_L-1hXg_AR2ZY9aDau7124n8xuQqJVGkAg5XyLNhrcEzyMEzZRcEIls1wbGJ9SsZUxlETBtJDWkTtc1h8J6EVh2Tz1CwgDneKB5-eMC6NF-YXZ0b_oGWiWQGTCOPQYvgO7jE67L9kdEXjYYjB2GUvgyuFaEOCgwCFIlrKn4fFmPMgKmMproWB6SoAuUUJgEh2BphfrWMD4zsN3IelSha9lZ5Rmdhq-9JTMsk_rc9_-Kh60Z18yTJkJ" />
@@ -211,7 +197,7 @@
                     <div class="p-4">
                         <div class="flex items-center gap-3">
                             <img alt="Avatar de gamedev" class="h-8 w-8 rounded-full"
-                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4HUa3gmnk07dvWtPG6Pr9ecX9EUIeKesQwTxCrfE1OzzkhmxMsr5tp58uClfLEC-GM9XOH2OTQ3HVofv1gzE9h9UEa6iaWPVv0xlgy5hhgkzdenjJfkcikyOGid-6U-zUenE7R8UMivde2rN48AtAqJ5URYnCfuhEMCB_ZnBRQ-RIlkApyu0cncpqcabYA_iQhRxLeBts9xfndyhg7SzZBid7uriU5Ez2pgZENSQBQFrrDD72_aOI4N7ehgRORbQWhMyfPWfilSxq" />
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuC4HUa3gmnk07dvWtPG6Pr9ecX9EUIeKesQwTxCrfE1OzzkhmxMsr5tp58uClfLEC-GM9XOH2OTQ3HVofv1gzE9h9UEa6iaWPVv0xlgy5hhgkzdenjJfkcikyOGid-6U-zUenE7R8UMivde2rN48AtAqJ5URYnCfuhEMCB_ZnBRQ-RIlkApyu0cncpqcabYA_iQhRxLeBts9xfndyhg7SzZBid7uriU5Ez2pgZENSQBQFrpDD72_aOI4N7ehgRORbQWhMyfPWfilSxq" />
                             <div>
                                 <h3 class="font-semibold text-text-primary-dark">GameEngine</h3>
                                 <p class="text-sm text-text-secondary-dark">gamedev</p>
@@ -219,7 +205,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
+                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark repo-card" onclick="window.location.href='Ver_Repo.html'">
                     <a href="Ver_Repo.html">
                         <img alt="Vista previa del repositorio 'API-Gateway'" class="w-full object-cover"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPQNrI29ZiPOc7RPAmrHscmrd5SfMZG5ysKtfPgvcbwI_5KAZVOfopUje8No5EtPZ7Umg0y_dgq5EMb6BCz9lQx35ZOIp_v7Jj3CFPzJ7S3gLwHfUquio8jCqa_Y-H9Zgt30Lhbzcg2yBYAF8Muru-XKwPwVL3b8EOMFSMVkbMpVtiC7u8E1oBDZq2MS32Rq9BZBM8zzqmLaOvA9Gr7bDw82YEA101Jf2--MPQcZH4I8VYDEOw810XeGXFPYe3fyI_DqfjIS8RQJqC" />
@@ -235,7 +221,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark">
+                <div class="mb-6 break-inside-avoid overflow-hidden rounded-xl border border-border-dark bg-card-dark repo-card" onclick="window.location.href='Ver_Repo.html'">
                     <a href="Ver_Repo.html">
                         <img alt="Vista previa del repositorio 'MyPortfolio'" class="w-full object-cover"
                             src="https://lh3.googleusercontent.com/aida-public/AB6AXuDaUvpWUQWR_TpXLD-0xqLzFiz_P9TI_3EBboMFJY4VvY7IVW994mVX198VlcuG_isGitdujAE9uODUd3oatf2k9R-ZMAYlHbUFkPQrwSNsobRLLdjcXunP5oKuzG_7GvwvRL2S1gsuoY5IE_qg9znSVq9t_7S1SL79JV-W0Wjtr9hC5UHrXqr47cnbdsHOM7gB4Ib8xxiZIJkTGEpGZQtuxHAqZqvzXgAEGFC7BuqvFLmjqeUfDKynvVtvlRAVnD-vZGamZjWPVhab" />
@@ -254,6 +240,78 @@
             </div>
         </main>
     </div>
+
+    <!-- Modal Personalizado (Popup) - Oculto por defecto -->
+    <div id="customModal" class="fixed inset-0 z-50 bg-black bg-opacity-70 hidden items-center justify-center">
+        <div class="bg-card-dark p-6 rounded-lg w-full max-w-sm border border-border-dark shadow-xl">
+            <h3 id="modalTitle" class="text-xl font-bold mb-3 text-white"></h3>
+            <p id="modalMessage" class="text-text-secondary-dark mb-6"></p>
+            <div id="modalButtons" class="flex justify-end">
+                <button id="closeModalButton"
+                    class="inline-flex justify-center rounded-md border border-transparent bg-primary py-2 px-6 text-sm font-medium text-white shadow-sm hover:bg-[#2ea043] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-dark">
+                    Entendido
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Referencias a elementos del DOM
+        const customModal = document.getElementById('customModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalMessage = document.getElementById('modalMessage');
+        const closeModalButton = document.getElementById('closeModalButton');
+
+        // Listener para cerrar el modal al hacer click en 'Entendido'
+        closeModalButton.addEventListener('click', closeModal);
+
+        /**
+         * Oculta el modal personalizado.
+         */
+        function closeModal() {
+            customModal.classList.add('hidden');
+            customModal.classList.remove('flex');
+        }
+
+        /**
+         * Muestra el modal personalizado con un título y mensaje.
+         * @param {string} title El título del mensaje.
+         * @param {string} message El cuerpo del mensaje.
+         */
+        function showModal(title, message) {
+            modalTitle.textContent = title;
+            modalMessage.textContent = message;
+            customModal.classList.remove('hidden');
+            customModal.classList.add('flex');
+        }
+
+        // -------------------------------------------------------------
+        // FUNCIONES DE SIMULACIÓN DE ERRORES DEL FEED
+        // -------------------------------------------------------------
+
+        /**
+         * Simula un error genérico al cargar la información del repositorio.
+         * @param {string} repoName Nombre del repositorio.
+         */
+        function simulateRepoError(repoName) {
+            showModal(
+                "Error de Carga",
+                `No fue posible obtener la información completa del repositorio '${repoName}'. Por favor, inténtalo de nuevo más tarde o verifica tu conexión.`
+            );
+        }
+
+        /**
+         * Simula un error por repositorio no encontrado (eliminado).
+         * @param {string} repoName Nombre del repositorio.
+         */
+        function simulateRepoMissing(repoName) {
+            showModal(
+                "Repositorio No Encontrado",
+                `Error: El repositorio '${repoName}' que has seleccionado ya no existe en el sistema o su visibilidad ha cambiado. Intenta actualizar el Feed.`
+            );
+        }
+
+    </script>
 </body>
 
 </html>
