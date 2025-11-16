@@ -1,1 +1,110 @@
+<!DOCTYPE html>
+<html class="dark" lang="es">
 
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Feed de Repositorios</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#238636",
+                        "background-dark": "#0d1117",
+                        "card-dark": "#161b22",
+                        "border-dark": "#30363d",
+                        "text-primary-dark": "#c9d1d9",
+                        "text-secondary-dark": "#8b949e",
+                        "accent-blue": "#58a6ff",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body class="bg-background-dark font-display text-text-primary-dark">
+    <div class="flex min-h-screen">
+        <aside class="w-64 flex-shrink-0 flex-col border-r border-border-dark bg-card-dark p-6 hidden lg:flex">
+            <div class="flex items-center gap-3 pb-8">
+                <h1 class="text-xl font-bold text-text-primary-dark">GitView</h1>
+            </div>
+            <nav class="flex flex-col gap-2">
+                <a class="flex items-center gap-3 rounded-lg bg-border-dark px-4 py-2.5 text-sm font-semibold" href="#">
+                    <span class="material-symbols-outlined">home</span>
+                    Inicio
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-text-secondary-dark hover:bg-border-dark hover:text-text-primary-dark transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">bookmark</span>
+                    Guardados
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-text-secondary-dark hover:bg-border-dark hover:text-text-primary-dark transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">person</span>
+                    Perfil
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-text-secondary-dark hover:bg-border-dark hover:text-text-primary-dark transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">Search</span>
+                    Buscar repositorios
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-text-secondary-dark hover:bg-border-dark hover:text-text-primary-dark transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">Account_Circle</span>
+                    Seguir usuarios
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-text-secondary-dark hover:bg-border-dark hover:text-text-primary-dark transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">Inbox</span>
+                    Invitaciones
+                </a>
+                <a class="flex items-center gap-3 rounded-lg px-4 py-2.5 text-sm font-medium text-text-secondary-dark hover:bg-border-dark hover:text-text-primary-dark transition-colors"
+                    href="#">
+                    <span class="material-symbols-outlined">Folder</span>
+                    Repositorios personales
+                </a>
+            </nav>
+            <div class="mt-auto">
+                <button onclick="window.location.href='Crear_Repo.html'"
+                    class="w-full flex items-center justify-center gap-2 rounded-lg bg-primary px-4 py-2.5 text-sm font-medium text-white hover:bg-[#2ea043] transition-colors">
+                    <span class="material-symbols-outlined">add</span>
+                    Nuevo Repo
+                </button>
+            </div>
+        </aside>
+        <main class="w-full flex-1 p-4 sm:p-6 lg:p-8">
+            <header class="mb-8 flex items-center justify-between">
+                <h1 class="text-3xl font-bold">Feed</h1>
+            </header>
+            
+            <div class="flex flex-col items-center justify-center py-20 text-center border border-border-dark rounded-xl bg-card-dark">
+                <span class="material-symbols-outlined text-6xl text-text-secondary-dark mb-4">public_off</span>
+                <h2 class="text-xl font-semibold mb-2">¡Vaya! No hay repositorios públicos</h2>
+                <p class="text-text-secondary-dark max-w-md mb-6">
+                    Parece que todavía nadie ha compartido contenido. Intenta buscar repositorios específicos o sé el primero en crear uno.
+                </p>
+                <!-- <a href="Crear_Repo.html" class="inline-flex items-center justify-center gap-2 rounded-lg bg-primary px-6 py-2.5 text-sm font-medium text-white hover:bg-[#2ea043] transition-colors">
+                    <span class="material-symbols-outlined">add</span>
+                    Crear mi primer Repositorio
+                </a> -->
+            </div>
+            </main>
+    </div>
+</body>
+
+</html>
