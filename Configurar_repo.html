@@ -1,7 +1,5 @@
 <!DOCTYPE html>
-
 <html class="dark" lang="es">
-
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
@@ -17,6 +15,31 @@
     <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        /* Modales */
+        .modal {
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal .modal-backdrop {
+            background-color: rgba(13, 17, 23, 0.8);
+        }
+        
+        .modal .modal-content {
+            transform: translateY(-20px);
+            transition: transform 0.3s ease;
+        }
+        
+        .modal.show .modal-content {
+            transform: translateY(0);
         }
     </style>
      <script id="tailwind-config">
@@ -67,7 +90,7 @@
                                     class="flex items-center gap-3 rounded-lg border border-solid border-[#326744] p-[15px] cursor-pointer hover:border-primary/50 transition-colors">
                                     <input checked=""
                                         class="h-5 w-5 border-2 border-[#326744] bg-transparent text-transparent checked:border-primary checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-primary"
-                                        name="visibility" type="radio" />
+                                        name="visibility" type="radio" value="public" />
                                     <div class="flex grow flex-col">
                                         <p class="text-white text-sm font-medium leading-normal font-display">Público
                                         </p>
@@ -80,7 +103,7 @@
                                     class="flex items-center gap-4 rounded-lg border border-solid border-[#326744] p-[15px] cursor-pointer hover:border-primary/50 transition-colors">
                                     <input
                                         class="h-5 w-5 border-2 border-[#326744] bg-transparent text-transparent checked:border-primary checked:bg-[image:--radio-dot-svg] focus:outline-none focus:ring-0 focus:ring-offset-0 checked:focus:border-primary"
-                                        name="visibility" type="radio" />
+                                        name="visibility" type="radio" value="private" />
                                     <div class="flex grow flex-col">
                                         <p class="text-white text-sm font-medium leading-normal font-display">Privado
                                         </p>
@@ -99,7 +122,7 @@
                                 <label class="flex items-start gap-4 cursor-pointer">
                                     <input checked=""
                                         class="mt-1 h-5 w-5 rounded-md border-2 border-[#326744] bg-transparent text-primary focus:ring-0 focus:ring-offset-0 checked:bg-primary"
-                                        type="checkbox" />
+                                        type="checkbox" id="enable-fork" />
                                     <div class="flex flex-col">
                                         <p class="text-white text-sm font-medium leading-normal font-display">Habilitar
                                             Fork</p>
@@ -111,7 +134,7 @@
                                 <label class="flex items-start gap-4 cursor-pointer">
                                     <input
                                         class="mt-1 h-5 w-5 rounded-md border-2 border-[#326744] bg-transparent text-primary focus:ring-0 focus:ring-offset-0 checked:bg-primary"
-                                        type="checkbox" />
+                                        type="checkbox" id="enable-questions" />
                                     <div class="flex flex-col">
                                         <p class="text-white text-sm font-medium leading-normal font-display">Habilitar
                                             Muro de Preguntas</p>
@@ -133,12 +156,13 @@
                                         class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-[#92c9a4]">search</span>
                                     <input
                                         class="w-full rounded-lg border border-solid border-[#326744] bg-[#112217] py-2 pl-10 pr-4 text-white placeholder:text-[#92c9a4] focus:border-primary focus:ring-primary/50"
-                                        placeholder="Buscar por nombre de usuario o email..." type="search" />
+                                        placeholder="Buscar por nombre de usuario o email..." type="search" id="search-collaborators" />
                                 </div>
                                 <div class="flex flex-col gap-3">
                                     
                                         <button
-                                            class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary/20 text-primary text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/30 transition-colors font-display">
+                                            class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-9 px-4 bg-primary/20 text-primary text-sm font-bold leading-normal tracking-[0.015em] hover:bg-primary/30 transition-colors font-display"
+                                            id="add-collaborator">
                                             <span class="truncate">Agregar</span>
                                         </button>
                                     </div>
@@ -148,11 +172,13 @@
                         <!-- Action Buttons -->
                         <div class="flex justify-end gap-3 p-4 mt-4 border-t border-[#326744]">
                             <button
-                                class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-transparent text-[#92c9a4] text-sm font-bold leading-normal hover:bg-[#326744]/30 transition-colors font-display">
+                                class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-transparent text-[#92c9a4] text-sm font-bold leading-normal hover:bg-[#326744]/30 transition-colors font-display"
+                                id="cancel-button">
                                 <span class="truncate">Cancelar</span>
                             </button>
                             <button
-                                class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-[#112217] text-sm font-bold leading-normal tracking-[0.015em] hover:brightness-90 transition-all font-display">
+                                class="flex cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-[#112217] text-sm font-bold leading-normal tracking-[0.015em] hover:brightness-90 transition-all font-display"
+                                id="save-button">
                                 <span class="truncate">Guardar Cambios</span>
                             </button>
                         </div>
@@ -161,6 +187,262 @@
             </main>
         </div>
     </div>
-</body>
 
+    <!-- Modal de Confirmación de Cambios Sin Guardar -->
+    <div id="unsaved-changes-modal" class="modal fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="modal-backdrop fixed inset-0"></div>
+        <div class="modal-content relative bg-card-dark rounded-xl border border-border-dark p-6 max-w-md w-full">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="material-symbols-outlined text-yellow-500 text-2xl">warning</span>
+                <h3 class="text-white text-lg font-bold">Cambios sin guardar</h3>
+            </div>
+            <p class="text-text-secondary-dark mb-6">
+                Tienes cambios sin guardar. Si sales ahora, perderás todos los cambios realizados.
+            </p>
+            <div class="flex justify-end gap-3">
+                <button id="continue-editing" class="px-4 py-2 text-text-primary-dark hover:bg-border-dark rounded-lg transition-colors">
+                    Seguir Configurando
+                </button>
+                <button id="confirm-exit" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
+                    Salir sin Guardar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmación de Guardado -->
+    <div id="save-success-modal" class="modal fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="modal-backdrop fixed inset-0"></div>
+        <div class="modal-content relative bg-card-dark rounded-xl border border-border-dark p-6 max-w-md w-full">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="material-symbols-outlined text-green-500 text-2xl">check_circle</span>
+                <h3 class="text-white text-lg font-bold">Cambios guardados</h3>
+            </div>
+            <p class="text-text-secondary-dark mb-6">
+                Los cambios se han guardado correctamente.
+            </p>
+            <div class="flex justify-end">
+                <button id="close-success-modal" class="px-4 py-2 bg-primary text-white rounded-lg hover:brightness-90 transition-colors">
+                    Aceptar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Navegación con Botón Atrás -->
+    <div id="back-navigation-modal" class="modal fixed inset-0 z-50 flex items-center justify-center p-4">
+        <div class="modal-backdrop fixed inset-0"></div>
+        <div class="modal-content relative bg-card-dark rounded-xl border border-border-dark p-6 max-w-md w-full">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="material-symbols-outlined text-yellow-500 text-2xl">arrow_back</span>
+                <h3 class="text-white text-lg font-bold">¿Salir de la página?</h3>
+            </div>
+            <p class="text-text-secondary-dark mb-6">
+                Tienes cambios sin guardar. Si navegas atrás, perderás todos los cambios realizados.
+            </p>
+            <div class="flex justify-end gap-3">
+                <button id="stay-on-page" class="px-4 py-2 text-text-primary-dark hover:bg-border-dark rounded-lg transition-colors">
+                    Permanecer
+                </button>
+                <button id="confirm-back" class="px-4 py-2 bg-red-600 text-white rounded-lg hover:bg-red-700 transition-colors">
+                    Salir sin Guardar
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const visibilityRadios = document.querySelectorAll('input[name="visibility"]');
+            const forkCheckbox = document.getElementById('enable-fork');
+            const questionsCheckbox = document.getElementById('enable-questions');
+            const searchInput = document.getElementById('search-collaborators');
+            const addButton = document.getElementById('add-collaborator');
+            const cancelButton = document.getElementById('cancel-button');
+            const saveButton = document.getElementById('save-button');
+            
+            // Modales
+            const unsavedChangesModal = document.getElementById('unsaved-changes-modal');
+            const saveSuccessModal = document.getElementById('save-success-modal');
+            const backNavigationModal = document.getElementById('back-navigation-modal');
+            
+            // Botones de modales
+            const continueEditingBtn = document.getElementById('continue-editing');
+            const confirmExitBtn = document.getElementById('confirm-exit');
+            const closeSuccessModalBtn = document.getElementById('close-success-modal');
+            const stayOnPageBtn = document.getElementById('stay-on-page');
+            const confirmBackBtn = document.getElementById('confirm-back');
+            
+            let hasUnsavedChanges = false;
+            let initialVisibility = 'public';
+            let initialForkState = true;
+            let initialQuestionsState = false;
+            
+            // Función para mostrar modal
+            function showModal(modal) {
+                modal.classList.add('show');
+            }
+            
+            // Función para ocultar modal
+            function hideModal(modal) {
+                modal.classList.remove('show');
+            }
+            
+            // Función para actualizar el estado de los elementos
+            function updateElements() {
+                const isPrivate = document.querySelector('input[name="visibility"]:checked').value === 'private';
+                
+                if (isPrivate) {
+                    // Deshabilitar checkboxes para repositorio privado
+                    forkCheckbox.disabled = true;
+                    questionsCheckbox.disabled = true;
+                    
+                    // Desmarcar los checkboxes
+                    forkCheckbox.checked = false;
+                    questionsCheckbox.checked = false;
+                    
+                    // Cambiar estilo visual para indicar deshabilitado
+                    forkCheckbox.closest('label').style.opacity = '0.6';
+                    forkCheckbox.closest('label').style.cursor = 'not-allowed';
+                    questionsCheckbox.closest('label').style.opacity = '0.6';
+                    questionsCheckbox.closest('label').style.cursor = 'not-allowed';
+                    
+                    // Deshabilitar barra de búsqueda
+                    searchInput.disabled = true;
+                    searchInput.style.opacity = '0.6';
+                    searchInput.style.cursor = 'not-allowed';
+                    searchInput.placeholder = 'No disponible para repositorios privados';
+                    
+                    // Deshabilitar botón Agregar
+                    addButton.disabled = true;
+                    addButton.style.opacity = '0.6';
+                    addButton.style.cursor = 'not-allowed';
+                    addButton.classList.remove('hover:bg-primary/30');
+                    addButton.classList.add('hover:bg-primary/20');
+                } else {
+                    // Habilitar checkboxes para repositorio público
+                    forkCheckbox.disabled = false;
+                    questionsCheckbox.disabled = false;
+                    
+                    // Restaurar estilo visual
+                    forkCheckbox.closest('label').style.opacity = '1';
+                    forkCheckbox.closest('label').style.cursor = 'pointer';
+                    questionsCheckbox.closest('label').style.opacity = '1';
+                    questionsCheckbox.closest('label').style.cursor = 'pointer';
+                    
+                    // Habilitar barra de búsqueda
+                    searchInput.disabled = false;
+                    searchInput.style.opacity = '1';
+                    searchInput.style.cursor = 'text';
+                    searchInput.placeholder = 'Buscar por nombre de usuario o email...';
+                    
+                    // Habilitar botón Agregar
+                    addButton.disabled = false;
+                    addButton.style.opacity = '1';
+                    addButton.style.cursor = 'pointer';
+                    addButton.classList.remove('hover:bg-primary/20');
+                    addButton.classList.add('hover:bg-primary/30');
+                }
+                
+                // Verificar si hay cambios sin guardar
+                checkForUnsavedChanges();
+            }
+            
+            // Función para verificar cambios sin guardar
+            function checkForUnsavedChanges() {
+                const currentVisibility = document.querySelector('input[name="visibility"]:checked').value;
+                const currentForkState = forkCheckbox.checked;
+                const currentQuestionsState = questionsCheckbox.checked;
+                
+                hasUnsavedChanges = (
+                    currentVisibility !== initialVisibility ||
+                    currentForkState !== initialForkState ||
+                    currentQuestionsState !== initialQuestionsState
+                );
+            }
+            
+            // Función para salir sin guardar
+            function exitWithoutSaving() {
+                // En una aplicación real, aquí iría la lógica para redirigir
+                console.log('Saliendo sin guardar cambios...');
+                // window.history.back() o window.location.href = 'url-anterior'
+            }
+            
+            // Función para guardar cambios
+            function saveChanges() {
+                // Actualizar los estados iniciales
+                initialVisibility = document.querySelector('input[name="visibility"]:checked').value;
+                initialForkState = forkCheckbox.checked;
+                initialQuestionsState = questionsCheckbox.checked;
+                
+                hasUnsavedChanges = false;
+                showModal(saveSuccessModal);
+            }
+            
+            // Manejar el botón atrás del navegador
+            function handleBackButton(e) {
+                if (hasUnsavedChanges) {
+                    e.preventDefault();
+                    e.returnValue = '';
+                    showModal(backNavigationModal);
+                    return '';
+                }
+            }
+            
+            // Añadir event listeners a los radio buttons
+            visibilityRadios.forEach(radio => {
+                radio.addEventListener('change', updateElements);
+            });
+            
+            // Añadir event listeners a los checkboxes
+            forkCheckbox.addEventListener('change', checkForUnsavedChanges);
+            questionsCheckbox.addEventListener('change', checkForUnsavedChanges);
+            
+            // Event listener para el botón Cancelar
+            cancelButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                if (hasUnsavedChanges) {
+                    showModal(unsavedChangesModal);
+                } else {
+                    exitWithoutSaving();
+                }
+            });
+            
+            // Event listener para el botón Guardar
+            saveButton.addEventListener('click', saveChanges);
+            
+            // Event listeners para el modal de cambios sin guardar
+            continueEditingBtn.addEventListener('click', function() {
+                hideModal(unsavedChangesModal);
+            });
+            
+            confirmExitBtn.addEventListener('click', function() {
+                hideModal(unsavedChangesModal);
+                exitWithoutSaving();
+            });
+            
+            // Event listeners para el modal de éxito
+            closeSuccessModalBtn.addEventListener('click', function() {
+                hideModal(saveSuccessModal);
+            });
+            
+            // Event listeners para el modal de navegación atrás
+            stayOnPageBtn.addEventListener('click', function() {
+                hideModal(backNavigationModal);
+            });
+            
+            confirmBackBtn.addEventListener('click', function() {
+                hideModal(backNavigationModal);
+                exitWithoutSaving();
+            });
+            
+            
+            // Inicializar el estado del historial
+            history.pushState(null, '', window.location.href);
+            
+            // Ejecutar una vez al cargar para establecer el estado inicial
+            updateElements();
+        });
+    </script>
+</body>
 </html>

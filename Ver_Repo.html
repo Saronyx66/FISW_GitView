@@ -1,14 +1,11 @@
 <!DOCTYPE html>
-
 <html class="dark" lang="es">
-
 <head>
     <meta charset="utf-8" />
     <meta content="width=device-width, initial-scale=1.0" name="viewport" />
     <title>Repo Viewer</title>
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
     <script id="tailwind-config">
         tailwind.config = {
@@ -34,19 +31,35 @@
     </script>
     <style type="text/tailwindcss">
         body {
-        @apply font-sans text-text-primary-dark bg-background-dark;
-    }
+            @apply font-sans text-text-primary-dark bg-background-dark;
+        }
 
-    .material-symbols-outlined {
-        font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
-        font-size: 20px;
-        @apply text-text-primary-dark;
-    }
+        .material-symbols-outlined {
+            font-variation-settings: "FILL" 0, "wght" 300, "GRAD" 0, "opsz" 24;
+            font-size: 20px;
+            @apply text-text-primary-dark;
+        }
 
-    .text-secondary {
-        @apply text-text-secondary-dark;
-    }
-</style>
+        .text-secondary {
+            @apply text-text-secondary-dark;
+        }
+
+        /* Animaciones para modales */
+        .animate-fadeIn {
+            animation: fadeIn .25s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: scale(.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+    </style>
 </head>
 
 <body class="bg-background-light dark:bg-background-dark font-display text-text-main-light dark:text-text-main-dark">
@@ -62,12 +75,6 @@
                         </div>
                     </div>
                 </div>
-                <div class="flex flex-1 justify-end gap-6">
-                    <div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10"
-                        data-alt="User avatar image"
-                        style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuDrDL85pzISTmwbGWM_R-MgAPPKrMKM78zdPCLjC0yclXcruS9FkMlbeYYJvoOIfocqY5Gjv5B_adGk2z5gW9NnRD6HX7eQPSqGG2-m2CjWp3YpWbJHHF4Wgmnx3EPGJ82HA9UIvjL201ZSJfMRMbRboGtPESZFqjBmGOl7uAcbLk4GN-Jwcd8EecMdREXFKTJryCOdy0Pu-nyGtv9111LqfI1_bShlf_riqm48Y8m2x7CKXedrD4UhKkNCj85ZgsH5e_fdJNzyWHIe");'>
-                    </div>
-                </div>
             </header>
             <main class="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
                 <!-- Cover Media Section -->
@@ -75,12 +82,24 @@
                     data-alt="Abstract gradient cover image for the repository"
                     style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCu2N13lvT_sUJOKzGegqNmSkEla77Qdvg9CceQ0_9dmvNgc3u4Z6ElQOSYHso-H0fsByl14Lo-cCp7CgaG12nFmR5OnxdsT6FH7pYThsPjtfNeRhLBNrciJrapcvdGxNnOzXCqUPIUkfWwJ05k7TkYrwWbFvEzZglJZ6b2rmb56e_cW6A67nkK97SvcOgXoNXLhJYVn9jAONXFvDt-G-tq5SvvzN3dfLJvpCBlkNTMyuNiVu9yQ0-f1f_A0SZ5fmqt5IlfNR-RUzkX");'>
                 </div>
+
                 <!-- Repository Heading -->
                 <div class="flex flex-wrap justify-between gap-3 p-4 mb-8">
                     <div class="flex flex-col">
-                        <h1
-                            class="text-text-main-light dark:text-text-main-dark text-4xl lg:text-5xl font-black leading-tight tracking-tighter">
-                            GitView</h1>
+                        <div class="flex items-center gap-4">
+                            <h1
+                                class="text-text-main-light dark:text-text-main-dark text-4xl lg:text-5xl font-black leading-tight tracking-tighter">
+                                GitView
+                            </h1>
+
+                            <!-- BOTÓN DESCARGAR -->
+                            <button onclick="showDownloadError()"
+                                class="flex items-center gap-2 rounded-lg px-4 py-2 bg-primary text-white text-sm font-bold hover:opacity-90 transition">
+                                <span class="material-symbols-outlined !text-white">download</span>
+                                Descargar
+                            </button>
+                        </div>
+
                         <p
                             class="text-text-secondary-light dark:text-text-secondary-dark text-lg font-normal leading-normal flex items-center gap-2">
                             <span class="material-symbols-outlined !text-xl">account_circle</span>
@@ -88,6 +107,7 @@
                         </p>
                     </div>
                 </div>
+
                 <!-- Files Section -->
                 <section class="mb-12">
                     <div class="px-4 py-3 @container">
@@ -98,77 +118,69 @@
                                 <thead>
                                     <tr class="bg-background-light dark:bg-background-dark">
                                         <th class="px-6 py-4 text-left text-sm font-medium w-2/4">Name</th>
-                                        <th class="px-6 py-4 text-left text-sm font-medium w-1/4">Last commit</th>
-                                        <th class="px-6 py-4 text-left text-sm font-medium w-1/4">Last update</th>
+                                        <th class="px-6 py-4 text-left text-sm font-font-medium w-1/4">Last commit</th>
+                                        <th class="px-6 py-4 text-left text-sm font-font-medium w-1/4">Last update</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr class="border-t border-t-border-light dark:border-t-border-dark">
-                                        <!-- CLASE h-16 CAMBIADA A h-10 -->
-                                        <td class="h-10 px-6 py-2 text-sm font-medium flex items-center gap-3"><span
-                                                class="material-symbols-outlined text-primary">folder</span><span>src</span>
+                                        <td class="h-10 px-6 py-2 text-sm font-medium flex items-center gap-3">
+                                            <span class="material-symbols-outlined text-primary">folder</span><span>src</span>
                                         </td>
-                                        <!-- CLASE h-16 CAMBIADA A h-10 -->
                                         <td
                                             class="h-10 px-6 py-2 text-text-secondary-light dark:text-text-secondary-dark text-sm">
                                             Initial commit</td>
-                                        <!-- CLASE h-16 CAMBIADA A h-10 -->
                                         <td
                                             class="h-10 px-6 py-2 text-text-secondary-light dark:text-text-secondary-dark text-sm">
                                             2 days ago</td>
                                     </tr>
+
                                     <tr class="border-t border-t-border-light dark:border-t-border-dark">
-                                        <!-- CLASE h-16 CAMBIADA A h-10 -->
-                                        <td class="h-10 px-6 py-2 text-sm font-medium flex items-center gap-3"><span
-                                                class="material-symbols-outlined text-primary">folder</span><span>docs</span>
+                                        <td class="h-10 px-6 py-2 text-sm font-medium flex items-center gap-3">
+                                            <span class="material-symbols-outlined text-primary">folder</span><span>docs</span>
                                         </td>
-                                        <!-- CLASE h-16 CAMBIADA A h-10 -->
                                         <td
                                             class="h-10 px-6 py-2 text-text-secondary-light dark:text-text-secondary-dark text-sm">
                                             Update documentation</td>
-                                        <!-- CLASE h-16 CAMBIADA A h-10 -->
                                         <td
                                             class="h-10 px-6 py-2 text-text-secondary-light dark:text-text-secondary-dark text-sm">
                                             1 day ago</td>
                                     </tr>
+
                                     <tr class="border-t border-t-border-light dark:border-t-border-dark">
-                                        <!-- CLASE h-16 CAMBIADA A h-10 -->
-                                        <td class="h-10 px-6 py-2 text-sm font-medium flex items-center gap-3"><span
+                                        <td class="h-10 px-6 py-2 text-sm font-medium flex items-center gap-3">
+                                            <span
                                                 class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">description</span><span>.gitignore</span>
                                         </td>
-                                        <!-- CLASE h-16 CAMBIADA A h-10 -->
                                         <td
                                             class="h-10 px-6 py-2 text-text-secondary-light dark:text-text-secondary-dark text-sm">
                                             Add node modules to gitignore</td>
-                                        <!-- CLASE h-16 CAMBIADA A h-10 -->
                                         <td
                                             class="h-10 px-6 py-2 text-text-secondary-light dark:text-text-secondary-dark text-sm">
                                             2 days ago</td>
                                     </tr>
+
                                     <tr class="border-t border-t-border-light dark:border-t-border-dark">
-                                        <!-- CLASE h-16 CAMBIADA A h-10 -->
-                                        <td class="h-10 px-6 py-2 text-sm font-medium flex items-center gap-3"><span
+                                        <td class="h-10 px-6 py-2 text-sm font-medium flex items-center gap-3">
+                                            <span
                                                 class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">description</span><span>README.md</span>
                                         </td>
-                                        <!-- CLASE h-16 CAMBIADA A h-10 -->
                                         <td
                                             class="h-10 px-6 py-2 text-text-secondary-light dark:text-text-secondary-dark text-sm">
                                             Initial commit</td>
-                                        <!-- CLASE h-16 CAMBIADA A h-10 -->
                                         <td
                                             class="h-10 px-6 py-2 text-text-secondary-light dark:text-text-secondary-dark text-sm">
                                             2 days ago</td>
                                     </tr>
+
                                     <tr class="border-t border-t-border-light dark:border-t-border-dark">
-                                        <!-- CLASE h-16 CAMBIADA A h-10 -->
-                                        <td class="h-10 px-6 py-2 text-sm font-medium flex items-center gap-3"><span
+                                        <td class="h-10 px-6 py-2 text-sm font-medium flex items-center gap-3">
+                                            <span
                                                 class="material-symbols-outlined text-text-secondary-light dark:text-text-secondary-dark">code</span><span>package.json</span>
                                         </td>
-                                        <!-- CLASE h-16 CAMBIADA A h-10 -->
                                         <td
                                             class="h-10 px-6 py-2 text-text-secondary-light dark:text-text-secondary-dark text-sm">
                                             Add dependencies</td>
-                                        <!-- CLASE h-16 CAMBIADA A h-10 -->
                                         <td
                                             class="h-10 px-6 py-2 text-text-secondary-light dark:text-text-secondary-dark text-sm">
                                             1 day ago</td>
@@ -178,11 +190,11 @@
                         </div>
                     </div>
                 </section>
+
                 <!-- Q&A Section -->
                 <section class="px-4 py-3">
-                    <h3 class="text-2xl font-bold mb-6 tracking-tight">Questions &amp; Discussion</h3>
+                    <h3 class="text-2xl font-bold mb-6 tracking-tight">Questions & Discussion</h3>
                     <div class="flex flex-col gap-6">
-                        <!-- New Question Form -->
                         <div
                             class="bg-component-light dark:bg-component-dark border border-border-light dark:border-border-dark rounded-lg p-4 flex flex-col gap-4">
                             <textarea
@@ -195,38 +207,8 @@
                                 </button>
                             </div>
                         </div>
-                        <!-- Questions List -->
-                        <!-- <div class="flex flex-col divide-y divide-border-light dark:divide-border-dark">
-                            <div class="py-5 flex items-start gap-4">
-                                <span class="material-symbols-outlined text-2xl text-green-500 mt-1">check_circle</span>
-                                <div class="flex-1">
-                                    <a class="font-bold text-lg hover:text-primary" href="#">How to set up the
-                                        development environment?</a>
-                                    <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark mt-1">
-                                        Opened by @dev_user · 3 replies</p>
-                                </div>
-                            </div>
-                            <div class="py-5 flex items-start gap-4">
-                                <span class="material-symbols-outlined text-2xl text-purple-400 mt-1">help</span>
-                                <div class="flex-1">
-                                    <a class="font-bold text-lg hover:text-primary" href="#">Is there a plan to support
-                                        TypeScript?</a>
-                                    <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark mt-1">
-                                        Opened by @frontend_fan · 8 replies</p>
-                                </div>
-                            </div>
-                            <div class="py-5 flex items-start gap-4">
-                                <span class="material-symbols-outlined text-2xl text-purple-400 mt-1">help</span>
-                                <div class="flex-1">
-                                    <a class="font-bold text-lg hover:text-primary" href="#">Contribution guidelines</a>
-                                    <p class="text-sm text-text-secondary-light dark:text-text-secondary-dark mt-1">
-                                        Opened by @newbie_coder · 0 replies</p>
-                                </div>
-                            </div>
-                        </div> -->
 
                         <div class="border-t border-border-dark pt-6 flex justify-end">
-                            <!-- Botón de atrás -->
                             <button onclick="window.location.href='Inicio.html'"
                                 class="inline-flex justify-center rounded-md border border-transparent bg-red-600 py-2 px-6 text-sm font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 focus:ring-offset-background-dark"
                                 type="button">
@@ -238,6 +220,51 @@
             </main>
         </div>
     </div>
-</body>
 
+    <!-- MODAL DE ERROR PARA DESCARGAR -->
+    <div id="downloadErrorModal"
+        class="hidden fixed inset-0 bg-black/50 backdrop-blur-sm flex items-center justify-center z-50">
+
+        <div class="bg-white dark:bg-background-dark p-6 rounded-2xl shadow-2xl w-80 animate-fadeIn border border-border-dark">
+            <div class="flex items-center gap-3 mb-4">
+                <span class="material-symbols-outlined text-red-600 text-3xl">error</span>
+                <h2 class="text-xl font-bold text-red-600">Error de Descarga</h2>
+            </div>
+
+            <p class="text-black dark:text-white mb-6">
+                No se pudo descargar el repositorio. Por favor, inténtalo de nuevo más tarde.
+            </p>
+
+            <button onclick="closeDownloadError()"
+                    class="w-full bg-primary text-white font-bold py-2 rounded-lg hover:opacity-90 transition">
+                Cerrar
+            </button>
+        </div>
+    </div>
+
+    <!-- SCRIPT PARA EL MODAL DE ERROR -->
+    <script>
+        function showDownloadError() {
+            document.getElementById("downloadErrorModal").classList.remove("hidden");
+        }
+
+        function closeDownloadError() {
+            document.getElementById("downloadErrorModal").classList.add("hidden");
+        }
+
+        // Cerrar modal al hacer clic fuera del contenido
+        document.getElementById("downloadErrorModal").addEventListener("click", function(e) {
+            if (e.target === this) {
+                closeDownloadError();
+            }
+        });
+
+        // Cerrar modal con tecla Escape
+        document.addEventListener("keydown", function(e) {
+            if (e.key === "Escape") {
+                closeDownloadError();
+            }
+        });
+    </script>
+</body>
 </html>
