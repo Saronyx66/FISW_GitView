@@ -40,7 +40,6 @@
 <body class="bg-background-dark font-display text-text-primary-dark">
     <div class="flex min-h-screen">
         <main class="w-full flex-1 p-4 sm:p-6 lg:p-8">
-            <!-- Se usará como contenedor del formulario para capturar el submit -->
             <form id="repoForm" class="max-w-4xl mx-auto">
                 <header class="mb-8">
                     <h1 class="text-3xl font-bold">Crear un Nuevo Repositorio</h1>
@@ -48,10 +47,8 @@
                         incluyendo el historial de revisiones.</p>
                 </header>
 
-                <!-- Contenedor de campos del formulario -->
                 <div class="space-y-8">
 
-                    <!-- Campo Nombre del Repositorio -->
                     <div>
                         <label class="block text-sm font-medium text-text-primary-dark" for="repo-name">Nombre del
                             Repositorio <span class="text-red-500">*</span></label>
@@ -59,53 +56,12 @@
                             <span
                                 class="inline-flex items-center rounded-l-md border border-r-0 border-border-dark bg-card-dark px-3 text-text-secondary-dark">elenacoder
                                 /</span>
-                            <!-- ID Añadido: repoName -->
                             <input
                                 class="block w-full min-w-0 flex-1 rounded-none rounded-r-md border-border-dark bg-background-dark text-text-primary-dark focus:border-accent-blue focus:ring-accent-blue sm:text-sm"
                                 id="repoName" name="repo-name" placeholder="mi-increible-proyecto" type="text" />
                         </div>
                     </div>
 
-                    <!-- Campo Visibilidad -->
-                    <!-- <div>
-                        <fieldset>
-                            <legend class="text-sm font-medium text-text-primary-dark">Visibilidad <span
-                                    class="text-red-500">*</span></legend>
-                            <div class="mt-2 space-y-4">
-                                <div
-                                    class="flex items-start rounded-md border border-border-dark p-4 hover:border-accent-blue cursor-pointer">
-                                    <input checked=""
-                                        class="h-4 w-4 border-border-dark bg-background-dark text-accent-blue focus:ring-accent-blue"
-                                        id="public" name="visibility" type="radio" value="public" />
-                                    <div class="ml-3 text-sm">
-                                        <label class="font-medium text-text-primary-dark flex items-center gap-2"
-                                            for="public">
-                                            <span class="material-symbols-outlined !text-base">public</span> Público
-                                        </label>
-                                        <p class="text-text-secondary-dark">Cualquiera en internet puede ver este
-                                            repositorio. Tú eliges quién puede hacer commits.</p>
-                                    </div>
-                                </div>
-                                <div
-                                    class="flex items-start rounded-md border border-border-dark p-4 hover:border-accent-blue cursor-pointer">
-                                    ID Añadido: private
-                                    <input
-                                        class="h-4 w-4 border-border-dark bg-background-dark text-accent-blue focus:ring-accent-blue"
-                                        id="private" name="visibility" type="radio" value="private" />
-                                    <div class="ml-3 text-sm">
-                                        <label class="font-medium text-text-primary-dark flex items-center gap-2"
-                                            for="private">
-                                            <span class="material-symbols-outlined !text-base">lock</span> Privado
-                                        </label>
-                                        <p class="text-text-secondary-dark">Tú eliges quién puede ver y hacer commits en
-                                            este repositorio.</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </div> -->
-
-                    <!-- Campo Contenido del README -->
                     <div>
                         <label class="block text-sm font-medium text-text-primary-dark mb-1"
                             for="readme-content">Contenido del README</label>
@@ -117,50 +73,6 @@
                             placeholder="Escribe aquí una descripción detallada de tu proyecto..." rows="6"></textarea>
                     </div>
 
-                    <!-- Opciones Adicionales (Fork y Muro de Preguntas) -->
-                    <!-- <div class="space-y-4">
-                        <div class="relative flex items-start">
-                            <div class="flex h-5 items-center">
-                                //ID Añadido: enableFork//
-                                <input
-                                    class="h-4 w-4 rounded border-border-dark bg-background-dark text-accent-blue focus:ring-accent-blue"
-                                    id="enableFork" name="enable-fork" type="checkbox" />
-                            </div>
-                            <div class="ml-3 text-sm">
-                                <label class="font-medium text-text-primary-dark" for="enableFork">Habilitar
-                                    Fork</label>
-                                <p class="text-text-secondary-dark">Permite a otros usuarios copiar el repositorio.</p>
-                            </div>
-                        </div>
-                        <div class="relative flex items-start">
-                            <div class="flex h-5 items-center">
-                                // ID Añadido: enableQnA //
-                                <input
-                                    class="h-4 w-4 rounded border-border-dark bg-background-dark text-accent-blue focus:ring-accent-blue"
-                                    id="enableQnA" name="enable-wall" type="checkbox" />
-                            </div>
-                            <div class="ml-3 text-sm">
-                                <label class="font-medium text-text-primary-dark" for="enableQnA">Habilitar Muro de
-                                    Preguntas</label>
-                                <p class="text-text-secondary-dark">Permite que los seguidores puedan resolver dudas
-                                    sobre el proyecto.</p>
-                            </div>
-                        </div>
-                    </div> -->
-
-                    <!-- Otros campos -->
-                    <!-- <div>
-                        <label class="block text-sm font-medium text-text-primary-dark" for="collaborators">Agregar
-                            Colaboradores</label>
-                        <div class="mt-1 relative">
-                            <span
-                                class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-text-secondary-dark">group_add</span>
-                            <input
-                                class="block w-full rounded-md border-border-dark bg-background-dark py-2 pl-10 pr-4 text-text-primary-dark focus:border-accent-blue focus:ring-accent-blue sm:text-sm"
-                                id="collaborators" name="collaborators" placeholder="Buscar por nombre de usuario..."
-                                type="text" />
-                        </div>
-                    </div> -->
                     <div>
                         <label class="block text-sm font-medium text-text-primary-dark">Seleccionar Portada del
                             Repositorio</label>
@@ -191,7 +103,6 @@
                             type="text" />
                     </div>
 
-                    <!-- Botones de Acción -->
                     <div class="border-t border-border-dark pt-6 flex justify-end gap-3">
                         <button id="cancelButton"
                             class="inline-flex justify-center rounded-md border border-border-dark bg-transparent py-2 px-6 text-sm font-medium text-text-primary-dark shadow-sm hover:bg-card-dark focus:outline-none focus:ring-2 focus:ring-border-dark focus:ring-offset-2 focus:ring-offset-background-dark"
@@ -209,21 +120,17 @@
         </main>
     </div>
 
-    <!-- Modal Personalizado (Popup) - Oculto por defecto -->
     <div id="customModal" class="fixed inset-0 z-50 bg-black bg-opacity-70 hidden items-center justify-center">
         <div class="bg-card-dark p-6 rounded-lg w-full max-w-sm border border-border-dark shadow-xl">
             <h3 id="modalTitle" class="text-xl font-bold mb-3 text-white"></h3>
             <p id="modalMessage" class="text-text-secondary-dark mb-6"></p>
-            <!-- Estructura de botones adaptada para mostrar 1 o 2 botones -->
             <div id="modalButtons" class="flex justify-end gap-3">
-                <!-- Botón Secundario (e.g., "No, seguir editando" para el popup de Cancelar) -->
                 <button id="modalSecondaryButton"
                     class="hidden inline-flex justify-center rounded-md border border-border-dark bg-transparent py-2 px-6 text-sm font-medium text-text-primary-dark shadow-sm hover:bg-card-dark focus:outline-none focus:ring-2 focus:ring-border-dark focus:ring-offset-2 focus:ring-offset-background-dark"
                     type="button">
                     No
                 </button>
 
-                <!-- Botón Primario (e.g., "Entendido" o "Sí, salir") -->
                 <button id="modalPrimaryButton"
                     class="inline-flex justify-center rounded-md border border-transparent bg-primary py-2 px-6 text-sm font-medium text-white shadow-sm hover:bg-[#2ea043] focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background-dark">
                     Entendido
@@ -236,9 +143,10 @@
         // Referencias a elementos del DOM
         const repoForm = document.getElementById('repoForm');
         const repoNameInput = document.getElementById('repoName');
-        const visibilityPrivate = document.getElementById('private');
-        const enableFork = document.getElementById('enableFork');
-        const enableQnA = document.getElementById('enableQnA');
+        // Los elementos comentados a continuación no tienen IDs en el HTML original, pero se mantienen como referencia
+        // const visibilityPrivate = document.getElementById('private');
+        // const enableFork = document.getElementById('enableFork');
+        // const enableQnA = document.getElementById('enableQnA');
         const cancelButton = document.getElementById('cancelButton'); // Nuevo
 
         // Modal Elements
@@ -260,7 +168,7 @@
          * Muestra el modal personalizado, ajustando botones y acciones según el tipo.
          * @param {string} title El título del mensaje.
          * @param {string} message El cuerpo del mensaje.
-         * @param {string} type 'error' o 'confirm' para definir los botones y acciones.
+         * @param {string} type 'error', 'confirm' (para Cancelar), o 'success-confirm' (para Crear Repositorio).
          */
         function showModal(title, message, type = 'error') {
             modalTitle.textContent = title;
@@ -272,30 +180,52 @@
             const newPrimaryButton = document.getElementById('modalPrimaryButton');
             const newSecondaryButton = document.getElementById('modalSecondaryButton');
 
-            // Resetear estilos y visibilidad
+            // Resetear estilos y visibilidad por defecto
             newSecondaryButton.classList.add('hidden');
             newPrimaryButton.classList.remove('bg-red-600', 'hover:bg-red-700', 'focus:ring-red-500');
             newPrimaryButton.classList.add('bg-primary', 'hover:bg-[#2ea043]', 'focus:ring-primary');
 
-
-            if (type === 'confirm') {
+            // --- Lógica del Modal ---
+            if (type === 'confirm') { // Modal de Confirmación (ej: Cancelar/Descartar Cambios)
                 newPrimaryButton.textContent = "Sí, Salir";
-                // Cambiar el color del botón primario a rojo para la acción destructiva
+                // Color para acción destructiva
                 newPrimaryButton.classList.remove('bg-primary', 'hover:bg-[#2ea043]', 'focus:ring-primary');
                 newPrimaryButton.classList.add('bg-red-600', 'hover:bg-red-700', 'focus:ring-red-500');
 
                 newSecondaryButton.textContent = "No, Seguir Editando";
                 newSecondaryButton.classList.remove('hidden');
 
-                // Acción para SI (Botón Primario): Redirigir a inicio.html
+                // Acción para SI (Botón Primario): Redirigir a inicio.html (simulado)
                 newPrimaryButton.addEventListener('click', () => {
-                    window.location.href = 'inicio.html';
+                    alert('Simulación: Redirigiendo a inicio.html');
+                    closeModal(); // En una app real: window.location.href = 'inicio.html';
                 });
 
                 // Acción para NO (Botón Secundario): Cerrar el modal
                 newSecondaryButton.addEventListener('click', closeModal);
 
-            } else { // Default: mensaje de error/éxito (un botón: Entendido)
+            } else if (type === 'success-confirm') { // Modal de Éxito con Opción de Modificar
+                newPrimaryButton.textContent = "Sí"; // Sí, Modificar ahora
+                newSecondaryButton.textContent = "No"; // No, dejar así
+                newSecondaryButton.classList.remove('hidden');
+                
+                // Asegurar color verde para el botón de éxito (Sí)
+                newPrimaryButton.classList.remove('bg-red-600', 'hover:bg-red-700', 'focus:ring-red-500');
+                newPrimaryButton.classList.add('bg-primary', 'hover:bg-[#2ea043]', 'focus:ring-primary');
+
+
+                // Acción para SÍ (Botón Primario): Simular la acción de modificación
+                newPrimaryButton.addEventListener('click', () => {
+                    alert('Simulación: Redirigiendo a la página de modificación...');
+                    closeModal();
+                });
+
+                // Acción para NO (Botón Secundario): Simular ir a la vista del repositorio sin modificar
+                newSecondaryButton.addEventListener('click', () => {
+                    alert('Simulación: El repositorio ha sido creado y no se modificará por ahora.');
+                    closeModal();
+                });
+            } else { // Default: mensaje de error/éxito simple (un botón: Entendido)
                 newPrimaryButton.textContent = "Entendido";
 
                 // Acción para ENTENDIDO: Cerrar el modal
@@ -328,33 +258,26 @@
             if (repoNameInput.value.trim() === '') {
                 showModal(
                     "Contenido incompleto",
-                    "No puedes dejar el contenido del README en blanco.",
+                    "El nombre del repositorio no puede estar en blanco.", // Mensaje corregido
                     'error'
                 );
                 return;
             }
 
-            // 2. Validar Conflicto de Opciones (Privado + Opciones Públicas)
-            const isPrivate = visibilityPrivate.checked;
-            const isForkEnabled = enableFork.checked;
-            const isQnAEnabled = enableQnA.checked;
+            // *Nota: Las validaciones 2 y 3 sobre `visibilityPrivate`, `enableFork` y `enableQnA`
+            // están comentadas en el código HTML original, por lo que las omito aquí por defecto,
+            // pero si estuvieran habilitadas, irían aquí.
 
-            if (isPrivate && (isForkEnabled || isQnAEnabled)) {
-                showModal(
-                    "Conflicto de Visibilidad",
-                    "El repositorio es privado. Las opciones 'Habilitar Fork' y 'Habilitar Muro de Preguntas' solo están disponibles para repositorios públicos.",
-                    'error'
-                );
-                enableFork.checked = false;
-                enableQnA.checked = false;
-                return;
-            }
+            // Si pasa todas las validaciones, Muestra el modal de éxito con confirmación.
+            const repoName = repoNameInput.value.trim();
+            showModal(
+                "¡Repositorio Creado Exitosamente!",
+                `El repositorio **${repoName}** se ha creado. ¿Deseas modificarlo ahora mismo? De lo contrario, no se podrán hacer modificaciones en su configuración inicial más adelante.`,
+                'success-confirm' // Nuevo tipo para la confirmación de éxito
+            );
 
-            // Si pasa todas las validaciones, simula éxito
-            showModal("Éxito", "¡Repositorio validado y listo para ser creado!", 'error');
-
-            // En una aplicación real, aquí se enviaría el formulario:
-            // event.target.submit(); 
+            // En una aplicación real, aquí se enviaría el formulario (mediante fetch o AJAX) y
+            // el modal se mostraría SOLO si la llamada al servidor es exitosa.
         }
 
         // Adjuntar la función de validación al evento 'submit' del formulario
